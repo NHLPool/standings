@@ -1,506 +1,358 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Puck Pool — NHL Fantasy League Tracker. Live standings for the 2025-26 season.">
+<meta name="description" content="Puck Pool — NHL Fantasy League Tracker.">
 <title>Puck Pool — NHL Fantasy League</title>
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700;800&family=DM+Sans:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700;800&family=DM+Sans:wght@400;500&display=swap');
 
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+–navy:#0a1628;–surface:#0f1e35;–card:#162a46;–card2:#1c304f;
+–border:rgba(255,255,255,0.08);–border2:rgba(255,255,255,0.14);
+–text:#e2e8f0;–muted:#94a3b8;–accent:#3b82f6;–ab:#60a5fa;
+–gold:#f59e0b;–silver:#9ca3af;–bronze:#cd7f32;–green:#22c55e;–red:#ef4444;
+}
+html{scroll-behavior:smooth}
+body{background:var(–navy);color:var(–text);font-family:‘DM Sans’,system-ui,sans-serif;min-height:100vh;padding-bottom:4rem;-webkit-font-smoothing:antialiased}
 
-  :root {
-    --navy: #0a1628;
-    --surface: #0f1e35;
-    --card: #162a46;
-    --card2: #1a3152;
-    --border: rgba(255,255,255,0.08);
-    --text: #e2e8f0;
-    --muted: #94a3b8;
-    --accent: #3b82f6;
-    --accent-bright: #60a5fa;
-    --gold: #f59e0b;
-    --silver: #9ca3af;
-    --bronze: #cd7f32;
-    --green: #22c55e;
-    --red: #ef4444;
-  }
+/* HEADER */
+header{background:var(–surface);border-bottom:1px solid var(–border);padding:1rem 1.5rem;position:sticky;top:0;z-index:200;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.logo{font-family:‘Barlow Condensed’,sans-serif;font-weight:800;font-size:1.5rem;color:#fff;display:flex;align-items:center;gap:.5rem}
+.puck{width:26px;height:13px;background:var(–accent);border-radius:50%;flex-shrink:0}
+.header-right{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap}
+.badge{padding:3px 10px;border-radius:20px;font-size:.7rem;font-weight:500;white-space:nowrap}
+.badge-season{background:rgba(59,130,246,.12);color:var(–ab);border:1px solid rgba(59,130,246,.25)}
+.badge-live{background:rgba(34,197,94,.12);color:var(–green);border:1px solid rgba(34,197,94,.25);display:flex;align-items:center;gap:5px}
+.live-dot{width:6px;height:6px;background:var(–green);border-radius:50%;animation:pulse 2s infinite}
+.icon-btn{background:transparent;border:1px solid var(–border);border-radius:6px;color:var(–muted);cursor:pointer;padding:5px 9px;font-size:.95rem;transition:all .15s;line-height:1}
+.icon-btn:hover{color:var(–text);border-color:var(–border2)}
 
-  html { scroll-behavior: smooth; }
+/* SEASON BAR */
+.season-bar{background:var(–surface);border-bottom:1px solid var(–border);padding:.55rem 1.5rem;display:flex;align-items:center;gap:.75rem;flex-wrap:wrap}
+.season-bar-label{font-size:.7rem;color:var(–muted);font-weight:500;white-space:nowrap}
+.season-pills{display:flex;gap:5px;flex-wrap:wrap}
+.season-pill{font-family:‘Barlow Condensed’,sans-serif;font-weight:700;font-size:.8rem;letter-spacing:.04em;padding:4px 13px;border-radius:20px;cursor:pointer;border:1px solid var(–border);background:transparent;color:var(–muted);transition:all .15s}
+.season-pill.active{background:rgba(59,130,246,.15);color:var(–ab);border-color:rgba(59,130,246,.35)}
+.season-pill:hover:not(.active){color:var(–text);border-color:var(–border2)}
+.season-pill.future{font-style:italic}
 
-  body {
-    background: var(--navy);
-    color: var(--text);
-    font-family: 'DM Sans', system-ui, -apple-system, sans-serif;
-    min-height: 100vh;
-    padding-bottom: 4rem;
-    -webkit-font-smoothing: antialiased;
-  }
+/* MAIN */
+main{max-width:1080px;margin:0 auto;padding:1.75rem 1.25rem}
+.section-label{font-family:‘Barlow Condensed’,sans-serif;font-size:.68rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(–muted);margin-bottom:.7rem}
+.meta-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:1.5rem;gap:.5rem;flex-wrap:wrap}
+.last-updated{font-size:.7rem;color:var(–muted)}
+.data-source{font-size:.65rem;color:var(–muted);opacity:.55}
 
-  /* ── HEADER ── */
-  header {
-    background: var(--surface);
-    border-bottom: 1px solid var(--border);
-    padding: 1.1rem 1.5rem;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 1rem;
-  }
+/* INFO BANNER */
+.info-banner{background:rgba(59,130,246,.08);border:1px solid rgba(59,130,246,.2);border-radius:10px;padding:1.25rem 1.5rem;color:var(–ab);font-size:.88rem;text-align:center;margin-bottom:2rem;line-height:1.6}
 
-  .logo {
-    font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif;
-    font-weight: 800;
-    font-size: 1.55rem;
-    color: #fff;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    letter-spacing: 0.02em;
-    text-decoration: none;
-  }
+/* PODIUM */
+.podium{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:2rem;align-items:start}
+.podium-card{background:var(–card);border:1px solid var(–border);border-radius:12px;padding:1rem .85rem;text-align:center;transition:transform .18s;animation:fadeIn .4s ease both}
+.podium-card:hover{transform:translateY(-3px)}
+.podium-card.first{border-color:rgba(245,158,11,.45)}
+.podium-card.second{border-color:rgba(156,163,175,.3)}
+.podium-card.third{border-color:rgba(205,127,50,.3)}
+.podium-rank{font-family:‘Barlow Condensed’,sans-serif;font-size:2.2rem;font-weight:800;line-height:1;margin-bottom:.3rem}
+.first .podium-rank{color:var(–gold)}.second .podium-rank{color:var(–silver)}.third .podium-rank{color:var(–bronze)}
+.podium-name{font-family:‘Barlow Condensed’,sans-serif;font-weight:700;font-size:1.25rem;color:#fff;margin-bottom:.15rem}
+.podium-pts{font-family:‘Barlow Condensed’,sans-serif;font-size:1.55rem;font-weight:700;color:var(–ab);line-height:1.1}
+.podium-pts-label{font-size:.7rem;color:var(–muted)}
+.podium-teams{display:flex;justify-content:center;gap:4px;margin-top:.55rem;flex-wrap:wrap}
+.mini-chip{background:rgba(255,255,255,.06);border:1px solid var(–border);border-radius:4px;padding:2px 6px;font-size:.62rem;color:var(–muted);font-weight:500}
 
-  .puck {
-    width: 26px; height: 13px;
-    background: var(--accent);
-    border-radius: 50%;
-    display: inline-block;
-    flex-shrink: 0;
-  }
+/* LEADERBOARD */
+.leaderboard{background:var(–card);border:1px solid var(–border);border-radius:12px;overflow:hidden;margin-bottom:2.5rem}
+.lb-grid{display:grid;grid-template-columns:36px 1fr 72px 72px 72px 70px;gap:6px;align-items:center}
+.lb-header{padding:.55rem 1.2rem;background:var(–surface);font-size:.64rem;font-weight:500;text-transform:uppercase;letter-spacing:.1em;color:var(–muted);border-bottom:1px solid var(–border)}
+.lb-row{padding:.7rem 1.2rem;border-bottom:1px solid var(–border);transition:background .12s;animation:fadeIn .35s ease both}
+.lb-row:last-child{border-bottom:none}
+.lb-row:hover{background:rgba(255,255,255,.025)}
+.lb-row.extras{opacity:.48}
+.rank-cell{font-family:‘Barlow Condensed’,sans-serif;font-weight:700;font-size:1.05rem;color:var(–muted);text-align:center}
+.rank-cell.top{color:#fff}
+.player-name{font-weight:500;font-size:.92rem;color:#fff;line-height:1.2}
+.player-chips{display:flex;gap:3px;margin-top:3px;flex-wrap:wrap}
+.team-chip{font-size:.58rem;padding:1px 5px;border-radius:3px;font-weight:500;color:var(–muted);background:rgba(255,255,255,.04);border:1px solid var(–border)}
+.pts-cell{text-align:right;font-size:.8rem;color:var(–text)}
+.pts-cell .pt-abbr{font-size:.58rem;color:var(–muted);display:block;line-height:1;margin-bottom:1px}
+.total-cell{font-family:‘Barlow Condensed’,sans-serif;font-size:1.35rem;font-weight:700;color:var(–ab);text-align:right}
+.extras-tag{font-size:.58rem;padding:1px 5px;border-radius:3px;background:rgba(148,163,184,.08);color:var(–muted);border:1px solid var(–border);margin-left:5px;vertical-align:middle}
 
-  .header-right { display: flex; align-items: center; gap: 0.6rem; flex-wrap: wrap; }
+/* TEAM GRID */
+.team-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(122px,1fr));gap:9px}
+.team-card{background:var(–card);border:1px solid var(–border);border-radius:10px;padding:.85rem .7rem;text-align:center;transition:transform .15s,border-color .15s;animation:fadeIn .3s ease both}
+.team-card:hover{transform:translateY(-2px);border-color:rgba(59,130,246,.3)}
+.team-abbr{font-family:‘Barlow Condensed’,sans-serif;font-weight:800;font-size:1.15rem;color:#fff}
+.team-name-sm{font-size:.58rem;color:var(–muted);margin:2px 0 8px;line-height:1.35}
+.team-pts{font-family:‘Barlow Condensed’,sans-serif;font-size:1.55rem;font-weight:700;color:var(–ab);line-height:1}
+.team-record{font-size:.58rem;color:var(–muted);margin-top:3px}
+.team-owner{font-size:.58rem;color:var(–ab);margin-top:4px;opacity:.75}
 
-  .badge {
-    padding: 3px 10px;
-    border-radius: 20px;
-    font-size: 0.7rem;
-    font-weight: 500;
-    white-space: nowrap;
-  }
+/* STATES */
+.state-box{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:4rem 1.5rem;gap:.9rem;color:var(–muted);text-align:center}
+.spinner{width:34px;height:34px;border:2.5px solid var(–border);border-top-color:var(–accent);border-radius:50%;animation:spin .75s linear infinite}
+.state-sub{font-size:.75rem;opacity:.7}
+.error-box{background:rgba(239,68,68,.07);border:1px solid rgba(239,68,68,.18);border-radius:10px;padding:1.5rem;color:#fca5a5;font-size:.85rem;text-align:center;line-height:1.65;margin:2rem 0}
+.error-box strong{display:block;margin-bottom:.4rem;font-size:.95rem}
+.retry-btn{display:inline-block;margin-top:.9rem;padding:6px 18px;border-radius:6px;border:1px solid rgba(239,68,68,.3);background:transparent;color:#fca5a5;cursor:pointer;font-size:.82rem;font-family:inherit;transition:background .15s}
+.retry-btn:hover{background:rgba(239,68,68,.1)}
 
-  .badge-season {
-    background: rgba(59,130,246,0.12);
-    color: var(--accent-bright);
-    border: 1px solid rgba(59,130,246,0.25);
-  }
+/* ── MODAL OVERLAY ── */
+.overlay{position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:500;display:flex;align-items:flex-start;justify-content:center;padding:2rem 1rem;overflow-y:auto;backdrop-filter:blur(3px)}
+.overlay.hidden{display:none}
+.modal{background:var(–surface);border:1px solid var(–border2);border-radius:14px;width:100%;max-width:720px;padding:1.75rem;animation:fadeIn .2s ease;position:relative}
+.modal-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:1.5rem;gap:1rem}
+.modal-title{font-family:‘Barlow Condensed’,sans-serif;font-weight:800;font-size:1.4rem;color:#fff;letter-spacing:.04em}
+.modal-close{background:transparent;border:none;color:var(–muted);font-size:1.4rem;cursor:pointer;line-height:1;padding:2px 6px;border-radius:4px;transition:color .15s}
+.modal-close:hover{color:#fff}
 
-  .badge-live {
-    background: rgba(34,197,94,0.12);
-    color: var(--green);
-    border: 1px solid rgba(34,197,94,0.25);
-    display: flex;
-    align-items: center;
-    gap: 5px;
-  }
+/* password screen */
+.pw-screen{display:flex;flex-direction:column;align-items:center;gap:1rem;padding:1rem 0}
+.pw-screen p{font-size:.85rem;color:var(–muted);text-align:center}
+.pw-input{width:100%;max-width:280px;background:var(–card);border:1px solid var(–border2);border-radius:8px;padding:10px 14px;color:#fff;font-size:.95rem;font-family:inherit;outline:none;transition:border-color .15s;text-align:center;letter-spacing:.1em}
+.pw-input:focus{border-color:var(–accent)}
+.pw-error{color:#fca5a5;font-size:.78rem}
 
-  .live-dot {
-    width: 6px; height: 6px;
-    background: var(--green);
-    border-radius: 50%;
-    animation: pulse 2s infinite;
-    flex-shrink: 0;
-  }
+/* admin tabs */
+.admin-tabs{display:flex;gap:4px;margin-bottom:1.5rem;border-bottom:1px solid var(–border);padding-bottom:.75rem}
+.admin-tab{font-family:‘Barlow Condensed’,sans-serif;font-weight:700;font-size:.82rem;letter-spacing:.06em;text-transform:uppercase;padding:5px 14px;border-radius:6px;border:1px solid transparent;background:transparent;color:var(–muted);cursor:pointer;transition:all .15s}
+.admin-tab.active{background:rgba(59,130,246,.15);color:var(–ab);border-color:rgba(59,130,246,.3)}
+.admin-tab:hover:not(.active){color:var(–text)}
 
-  /* ── ANIMATIONS ── */
-  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.25} }
-  @keyframes spin  { to{transform:rotate(360deg)} }
-  @keyframes fadeIn { from{opacity:0;transform:translateY(6px)} to{opacity:1;transform:none} }
+/* admin form elements */
+.admin-section{margin-bottom:1.5rem}
+.admin-section-title{font-family:‘Barlow Condensed’,sans-serif;font-weight:700;font-size:.85rem;letter-spacing:.08em;text-transform:uppercase;color:var(–muted);margin-bottom:.75rem}
+.field-row{display:flex;gap:8px;align-items:center;margin-bottom:.5rem;flex-wrap:wrap}
+.field-label{font-size:.78rem;color:var(–muted);min-width:60px}
+.field-input{background:var(–card);border:1px solid var(–border2);border-radius:7px;padding:7px 11px;color:#fff;font-size:.85rem;font-family:inherit;outline:none;transition:border-color .15s;flex:1;min-width:80px}
+.field-input:focus{border-color:var(–accent)}
+.field-input.sm{max-width:90px;text-transform:uppercase}
 
-  /* ── MAIN LAYOUT ── */
-  main {
-    max-width: 1080px;
-    margin: 0 auto;
-    padding: 1.75rem 1.25rem;
-  }
+/* player edit card */
+.player-edit-card{background:var(–card);border:1px solid var(–border);border-radius:10px;padding:1rem;margin-bottom:.75rem}
+.player-edit-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:.75rem;gap:.5rem}
+.player-edit-name-input{background:var(–card2);border:1px solid var(–border2);border-radius:7px;padding:6px 10px;color:#fff;font-size:.9rem;font-weight:500;font-family:inherit;outline:none;flex:1;transition:border-color .15s}
+.player-edit-name-input:focus{border-color:var(–accent)}
+.teams-row{display:flex;gap:6px;flex-wrap:wrap;align-items:center}
+.team-abbr-input{background:var(–card2);border:1px solid var(–border2);border-radius:6px;padding:5px 8px;color:#fff;font-size:.8rem;font-family:‘Barlow Condensed’,sans-serif;font-weight:700;text-transform:uppercase;width:58px;text-align:center;outline:none;letter-spacing:.06em;transition:border-color .15s}
+.team-abbr-input:focus{border-color:var(–accent)}
+.add-player-btn{width:100%;padding:9px;border:1px dashed var(–border2);border-radius:8px;background:transparent;color:var(–muted);cursor:pointer;font-size:.82rem;font-family:inherit;transition:all .15s;margin-top:.5rem}
+.add-player-btn:hover{color:var(–text);border-color:rgba(255,255,255,.25)}
+.del-btn{background:transparent;border:none;color:rgba(239,68,68,.5);cursor:pointer;font-size:.95rem;padding:3px 6px;border-radius:4px;transition:color .15s;line-height:1;flex-shrink:0}
+.del-btn:hover{color:var(–red)}
 
-  .section-label {
-    font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif;
-    font-size: 0.68rem;
-    font-weight: 700;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    color: var(--muted);
-    margin-bottom: 0.7rem;
-  }
+/* season admin */
+.season-edit-row{display:flex;align-items:center;gap:8px;padding:.6rem .9rem;background:var(–card);border:1px solid var(–border);border-radius:8px;margin-bottom:.5rem}
+.season-edit-row .se-label{font-family:‘Barlow Condensed’,sans-serif;font-weight:700;font-size:.9rem;color:#fff;flex:1}
+.season-edit-row .se-type{font-size:.65rem;color:var(–muted);padding:2px 7px;border-radius:10px;background:rgba(255,255,255,.06);border:1px solid var(–border)}
+.season-active-badge{font-size:.65rem;color:var(–green);padding:2px 7px;border-radius:10px;background:rgba(34,197,94,.1);border:1px solid rgba(34,197,94,.25)}
 
-  .meta-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 1.5rem;
-    gap: 0.5rem;
-    flex-wrap: wrap;
-  }
+/* save/cancel buttons */
+.btn-row{display:flex;gap:8px;justify-content:flex-end;margin-top:1.5rem;flex-wrap:wrap}
+.btn{padding:8px 20px;border-radius:8px;font-size:.85rem;font-family:inherit;font-weight:500;cursor:pointer;transition:all .15s;border:1px solid transparent}
+.btn-primary{background:var(–accent);color:#fff;border-color:var(–accent)}
+.btn-primary:hover{background:#2563eb}
+.btn-ghost{background:transparent;color:var(–muted);border-color:var(–border2)}
+.btn-ghost:hover{color:var(–text);border-color:rgba(255,255,255,.25)}
+.btn-danger{background:rgba(239,68,68,.1);color:#fca5a5;border-color:rgba(239,68,68,.3)}
+.btn-danger:hover{background:rgba(239,68,68,.2)}
 
-  .last-updated { font-size: 0.7rem; color: var(--muted); }
-  .data-source  { font-size: 0.65rem; color: var(--muted); opacity: 0.55; }
+.save-toast{position:fixed;bottom:2rem;left:50%;transform:translateX(-50%);background:var(–green);color:#000;font-weight:500;font-size:.85rem;padding:9px 20px;border-radius:8px;z-index:600;opacity:0;transition:opacity .3s;pointer-events:none}
+.save-toast.show{opacity:1}
 
-  /* ── PODIUM ── */
-  .podium {
-    display: grid;
-    grid-template-columns: 1fr 1.08fr 1fr;
-    gap: 10px;
-    margin-bottom: 2rem;
-    align-items: end;
-  }
+/* ANIMATIONS */
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.25}}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes fadeIn{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:none}}
 
-  .podium-card {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 1rem 0.85rem;
-    text-align: center;
-    animation: fadeIn 0.4s ease both;
-    transition: transform 0.18s, box-shadow 0.18s;
-  }
-
-  .podium-card:hover { transform: translateY(-3px); }
-  .podium-card.first { border-color: rgba(245,158,11,0.45); padding-top: 1.4rem; }
-  .podium-card.second { border-color: rgba(156,163,175,0.3); }
-  .podium-card.third  { border-color: rgba(205,127,50,0.3); }
-
-  .podium-rank {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 2.2rem;
-    font-weight: 800;
-    line-height: 1;
-    margin-bottom: 0.3rem;
-  }
-  .first  .podium-rank { color: var(--gold); }
-  .second .podium-rank { color: var(--silver); }
-  .third  .podium-rank { color: var(--bronze); }
-
-  .podium-name {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-weight: 700;
-    font-size: 1.25rem;
-    color: #fff;
-    margin-bottom: 0.15rem;
-    letter-spacing: 0.03em;
-  }
-
-  .podium-pts {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 1.55rem;
-    font-weight: 700;
-    color: var(--accent-bright);
-    line-height: 1.1;
-  }
-
-  .podium-pts-label {
-    font-size: 0.7rem;
-    color: var(--muted);
-    font-family: 'DM Sans', sans-serif;
-    font-weight: 400;
-  }
-
-  .podium-teams {
-    display: flex;
-    justify-content: center;
-    gap: 4px;
-    margin-top: 0.55rem;
-    flex-wrap: wrap;
-  }
-
-  .mini-chip {
-    background: rgba(255,255,255,0.06);
-    border: 1px solid var(--border);
-    border-radius: 4px;
-    padding: 2px 6px;
-    font-size: 0.62rem;
-    color: var(--muted);
-    font-weight: 500;
-    letter-spacing: 0.03em;
-  }
-
-  /* ── LEADERBOARD ── */
-  .leaderboard {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    overflow: hidden;
-    margin-bottom: 2.5rem;
-  }
-
-  .lb-grid {
-    display: grid;
-    grid-template-columns: 36px 1fr 72px 72px 72px 70px;
-    gap: 6px;
-    align-items: center;
-  }
-
-  .lb-header {
-    padding: 0.55rem 1.2rem;
-    background: var(--surface);
-    font-size: 0.64rem;
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: var(--muted);
-    border-bottom: 1px solid var(--border);
-  }
-
-  .lb-row {
-    padding: 0.7rem 1.2rem;
-    border-bottom: 1px solid var(--border);
-    transition: background 0.12s;
-    animation: fadeIn 0.35s ease both;
-  }
-
-  .lb-row:last-child { border-bottom: none; }
-  .lb-row:hover { background: rgba(255,255,255,0.025); }
-  .lb-row.extras { opacity: 0.48; }
-
-  .rank-cell {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-weight: 700;
-    font-size: 1.05rem;
-    color: var(--muted);
-    text-align: center;
-  }
-  .rank-cell.top { color: #fff; }
-
-  .player-name {
-    font-weight: 500;
-    font-size: 0.92rem;
-    color: #fff;
-    line-height: 1.2;
-  }
-
-  .player-chips {
-    display: flex;
-    gap: 3px;
-    margin-top: 3px;
-    flex-wrap: wrap;
-  }
-
-  .team-chip {
-    font-size: 0.58rem;
-    padding: 1px 5px;
-    border-radius: 3px;
-    font-weight: 500;
-    color: var(--muted);
-    background: rgba(255,255,255,0.04);
-    border: 1px solid var(--border);
-    letter-spacing: 0.03em;
-  }
-
-  .pts-cell {
-    text-align: right;
-    font-size: 0.8rem;
-    color: var(--text);
-  }
-
-  .pts-cell .pt-abbr {
-    font-size: 0.58rem;
-    color: var(--muted);
-    display: block;
-    line-height: 1;
-    margin-bottom: 1px;
-    letter-spacing: 0.03em;
-  }
-
-  .total-cell {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 1.35rem;
-    font-weight: 700;
-    color: var(--accent-bright);
-    text-align: right;
-  }
-
-  .extras-tag {
-    font-size: 0.58rem;
-    padding: 1px 5px;
-    border-radius: 3px;
-    background: rgba(148,163,184,0.08);
-    color: var(--muted);
-    border: 1px solid var(--border);
-    margin-left: 5px;
-    vertical-align: middle;
-  }
-
-  /* ── TEAM GRID ── */
-  .team-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(122px, 1fr));
-    gap: 9px;
-  }
-
-  .team-card {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    padding: 0.85rem 0.7rem;
-    text-align: center;
-    transition: transform 0.15s, border-color 0.15s;
-    animation: fadeIn 0.3s ease both;
-  }
-
-  .team-card:hover {
-    transform: translateY(-2px);
-    border-color: rgba(59,130,246,0.3);
-  }
-
-  .team-abbr {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-weight: 800;
-    font-size: 1.15rem;
-    color: #fff;
-    letter-spacing: 0.04em;
-  }
-
-  .team-name {
-    font-size: 0.58rem;
-    color: var(--muted);
-    margin: 2px 0 8px;
-    line-height: 1.35;
-  }
-
-  .team-pts {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 1.55rem;
-    font-weight: 700;
-    color: var(--accent-bright);
-    line-height: 1;
-  }
-
-  .team-record {
-    font-size: 0.58rem;
-    color: var(--muted);
-    margin-top: 3px;
-  }
-
-  .team-owner {
-    font-size: 0.58rem;
-    color: var(--accent-bright);
-    margin-top: 4px;
-    opacity: 0.75;
-  }
-
-  /* ── STATES ── */
-  .state-box {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 4rem 1.5rem;
-    gap: 0.9rem;
-    color: var(--muted);
-    text-align: center;
-  }
-
-  .spinner {
-    width: 34px; height: 34px;
-    border: 2.5px solid var(--border);
-    border-top-color: var(--accent);
-    border-radius: 50%;
-    animation: spin 0.75s linear infinite;
-  }
-
-  .state-sub { font-size: 0.75rem; opacity: 0.7; }
-
-  .error-box {
-    background: rgba(239,68,68,0.07);
-    border: 1px solid rgba(239,68,68,0.18);
-    border-radius: 10px;
-    padding: 1.5rem;
-    color: #fca5a5;
-    font-size: 0.85rem;
-    text-align: center;
-    line-height: 1.65;
-    margin: 2rem 0;
-  }
-
-  .error-box strong { display: block; margin-bottom: 0.4rem; font-size: 0.95rem; }
-
-  .retry-btn {
-    display: inline-block;
-    margin-top: 0.9rem;
-    padding: 6px 18px;
-    border-radius: 6px;
-    border: 1px solid rgba(239,68,68,0.3);
-    background: transparent;
-    color: #fca5a5;
-    cursor: pointer;
-    font-size: 0.82rem;
-    font-family: inherit;
-    transition: background 0.15s;
-  }
-  .retry-btn:hover { background: rgba(239,68,68,0.1); }
-
-  /* ── RESPONSIVE ── */
-  @media (max-width: 620px) {
-    .lb-grid { grid-template-columns: 30px 1fr 62px 62px; }
-    .col-hide { display: none; }
-    .podium { grid-template-columns: 1fr; gap: 8px; }
-    .podium-card.first { padding-top: 1rem; }
-    header { padding: 0.9rem 1rem; }
-    .badge-season { display: none; }
-  }
+/* RESPONSIVE */
+@media(max-width:620px){
+.lb-grid{grid-template-columns:30px 1fr 62px 62px}
+.col-hide{display:none}
+.podium{grid-template-columns:1fr;gap:8px}
+header{padding:.9rem 1rem}
+.badge-season{display:none}
+.modal{padding:1.25rem}
+}
 </style>
+
 </head>
 <body>
 
 <header>
   <span class="logo"><span class="puck"></span>Puck Pool</span>
   <div class="header-right">
-    <span class="badge badge-season">2025–26 NHL Season</span>
+    <span class="badge badge-season" id="hdr-season-badge">2025–26 Season</span>
     <span class="badge badge-live"><span class="live-dot"></span>Live</span>
+    <button class="icon-btn" title="Admin" onclick="openAdmin()">⚙</button>
   </div>
 </header>
 
-<main>
-  <div id="app">
-    <div class="state-box">
-      <div class="spinner"></div>
-      <div>Loading standings…</div>
+<div class="season-bar">
+  <span class="season-bar-label">Season:</span>
+  <div class="season-pills" id="season-pills"></div>
+</div>
+
+<main id="main-content">
+  <div class="state-box"><div class="spinner"></div><div>Loading standings…</div></div>
+</main>
+
+<!-- PASSWORD OVERLAY -->
+
+<div class="overlay hidden" id="pw-overlay">
+  <div class="modal" style="max-width:360px;margin-top:6rem">
+    <div class="modal-header">
+      <span class="modal-title">🔒 Admin Access</span>
+      <button class="modal-close" onclick="closePwOverlay()">✕</button>
+    </div>
+    <div class="pw-screen">
+      <p>Enter the admin password to manage seasons, players, and teams.</p>
+      <input class="pw-input" id="pw-input" type="password" placeholder="••••••••" onkeydown="if(event.key==='Enter')checkPw()">
+      <span class="pw-error hidden" id="pw-error">Incorrect password. Try again.</span>
+      <div class="btn-row" style="justify-content:center;margin-top:.5rem">
+        <button class="btn btn-primary" onclick="checkPw()">Unlock</button>
+        <button class="btn btn-ghost" onclick="closePwOverlay()">Cancel</button>
+      </div>
     </div>
   </div>
-</main>
+</div>
+
+<!-- ADMIN OVERLAY -->
+
+<div class="overlay hidden" id="admin-overlay">
+  <div class="modal">
+    <div class="modal-header">
+      <span class="modal-title">⚙ Admin Panel</span>
+      <button class="modal-close" onclick="closeAdmin()">✕</button>
+    </div>
+
+```
+<div class="admin-tabs">
+  <button class="admin-tab active" onclick="switchAdminTab('players',this)">Players &amp; Teams</button>
+  <button class="admin-tab" onclick="switchAdminTab('seasons',this)">Seasons</button>
+  <button class="admin-tab" onclick="switchAdminTab('password',this)">Password</button>
+</div>
+
+<!-- PLAYERS TAB -->
+<div id="admin-tab-players">
+  <div class="admin-section">
+    <div class="admin-section-title" id="editing-season-label">Editing: —</div>
+    <p style="font-size:.78rem;color:var(--muted);margin-bottom:1rem">Each player can have 2–4 team abbreviations (e.g. COL, OTT, DET). Changes apply to the selected season only.</p>
+    <div id="player-cards-list"></div>
+    <button class="add-player-btn" onclick="addPlayerCard()">+ Add Player</button>
+  </div>
+  <div class="btn-row">
+    <button class="btn btn-ghost" onclick="closeAdmin()">Cancel</button>
+    <button class="btn btn-primary" onclick="savePlayers()">Save Changes</button>
+  </div>
+</div>
+
+<!-- SEASONS TAB -->
+<div id="admin-tab-seasons" style="display:none">
+  <div class="admin-section">
+    <div class="admin-section-title">Existing Seasons</div>
+    <div id="seasons-list"></div>
+  </div>
+  <div class="admin-section">
+    <div class="admin-section-title">Add New Season</div>
+    <p style="font-size:.78rem;color:var(--muted);margin-bottom:.75rem">
+      Add a past season (loads real NHL data) or a future/upcoming season (shows a placeholder until it starts).
+      Season ID format: <strong style="color:var(--ab)">20252026</strong>
+    </p>
+    <div class="field-row">
+      <span class="field-label">Season ID</span>
+      <input class="field-input sm" id="new-season-id" placeholder="20262027" maxlength="8" style="max-width:130px">
+      <select class="field-input" id="new-season-type" style="max-width:160px">
+        <option value="past">Past</option>
+        <option value="current" selected>Current</option>
+        <option value="future">Future / Upcoming</option>
+      </select>
+      <button class="btn btn-primary" onclick="addSeason()" style="white-space:nowrap">Add Season</button>
+    </div>
+    <p style="font-size:.72rem;color:var(--muted);margin-top:.5rem">
+      Past &amp; current seasons pull live/historical data from the NHL API. Future seasons show a TBD placeholder.
+    </p>
+  </div>
+  <div class="btn-row">
+    <button class="btn btn-ghost" onclick="closeAdmin()">Done</button>
+  </div>
+</div>
+
+<!-- PASSWORD TAB -->
+<div id="admin-tab-password" style="display:none">
+  <div class="admin-section">
+    <div class="admin-section-title">Change Password</div>
+    <p style="font-size:.78rem;color:var(--muted);margin-bottom:1rem">The password is stored locally in your browser. Anyone using this browser will have access until cleared.</p>
+    <div class="field-row">
+      <span class="field-label">Current</span>
+      <input class="field-input" id="pw-current" type="password" placeholder="Current password">
+    </div>
+    <div class="field-row">
+      <span class="field-label">New</span>
+      <input class="field-input" id="pw-new" type="password" placeholder="New password">
+    </div>
+    <div class="field-row">
+      <span class="field-label">Confirm</span>
+      <input class="field-input" id="pw-confirm" type="password" placeholder="Confirm new password">
+    </div>
+    <span class="pw-error hidden" id="pw-change-error" style="margin-top:.25rem;display:block"></span>
+  </div>
+  <div class="btn-row">
+    <button class="btn btn-ghost" onclick="closeAdmin()">Cancel</button>
+    <button class="btn btn-primary" onclick="changePassword()">Update Password</button>
+  </div>
+</div>
+```
+
+  </div>
+</div>
+
+<div class="save-toast" id="save-toast">✓ Saved</div>
 
 <script>
 'use strict';
 
-/* ── LEAGUE CONFIG ── */
-const LEAGUE = [
-  { name: 'Ian',   teams: ['COL','OTT','DET'] },
-  { name: 'Will',  teams: ['DAL','STL','BOS'] },
-  { name: 'Dave',  teams: ['VGK','MTL','PHI'] },
-  { name: 'Dan',   teams: ['CAR','NYR','CBJ'] },
-  { name: 'Monti', teams: ['WSH','BUF','NYI'] },
-  { name: 'Soap',  teams: ['TBL','MIN','SEA'] },
-  { name: 'Corey', teams: ['EDM','VAN','ANA'] },
-  { name: 'Schum', teams: ['FLA','UTA','CHI'] },
-  { name: 'Paul',  teams: ['TOR','LAK','CGY'] },
-  { name: 'Henry', teams: ['WPG','NJD','NSH'] },
-  { name: 'Extras', teams: ['PIT','SJS'], extras: true },
+/* ═══════════════════════════════════════════
+   DEFAULT DATA
+═══════════════════════════════════════════ */
+const DEFAULT_PLAYERS = [
+  { name:'Ian',   teams:['COL','OTT','DET'] },
+  { name:'Will',  teams:['DAL','STL','BOS'] },
+  { name:'Dave',  teams:['VGK','MTL','PHI'] },
+  { name:'Dan',   teams:['CAR','NYR','CBJ'] },
+  { name:'Monti', teams:['WSH','BUF','NYI'] },
+  { name:'Soap',  teams:['TBL','MIN','SEA'] },
+  { name:'Corey', teams:['EDM','VAN','ANA'] },
+  { name:'Schum', teams:['FLA','UTA','CHI'] },
+  { name:'Paul',  teams:['TOR','LAK','CGY'] },
+  { name:'Henry', teams:['WPG','NJD','NSH'] },
+  { name:'Extras', teams:['PIT','SJS'], extras:true },
 ];
 
-const TEAMS = {
-  COL:'Colorado Avalanche',   OTT:'Ottawa Senators',
-  DET:'Detroit Red Wings',    DAL:'Dallas Stars',
-  STL:'St. Louis Blues',      BOS:'Boston Bruins',
-  VGK:'Vegas Golden Knights', MTL:'Montreal Canadiens',
-  PHI:'Philadelphia Flyers',  CAR:'Carolina Hurricanes',
-  NYR:'New York Rangers',     CBJ:'Columbus Blue Jackets',
-  WSH:'Washington Capitals',  BUF:'Buffalo Sabres',
-  NYI:'New York Islanders',   TBL:'Tampa Bay Lightning',
-  MIN:'Minnesota Wild',       SEA:'Seattle Kraken',
-  EDM:'Edmonton Oilers',      VAN:'Vancouver Canucks',
-  ANA:'Anaheim Ducks',        FLA:'Florida Panthers',
-  UTA:'Utah Mammoth',         CHI:'Chicago Blackhawks',
-  TOR:'Toronto Maple Leafs',  LAK:'Los Angeles Kings',
-  CGY:'Calgary Flames',       WPG:'Winnipeg Jets',
-  NJD:'New Jersey Devils',    NSH:'Nashville Predators',
+const DEFAULT_SEASONS = [
+  { id:'20252026', label:'2025–26', type:'current' },
+];
+
+const ALL_NHL_TEAMS = {
+  COL:'Colorado Avalanche',   OTT:'Ottawa Senators',      DET:'Detroit Red Wings',
+  DAL:'Dallas Stars',         STL:'St. Louis Blues',       BOS:'Boston Bruins',
+  VGK:'Vegas Golden Knights', MTL:'Montreal Canadiens',    PHI:'Philadelphia Flyers',
+  CAR:'Carolina Hurricanes',  NYR:'New York Rangers',      CBJ:'Columbus Blue Jackets',
+  WSH:'Washington Capitals',  BUF:'Buffalo Sabres',        NYI:'New York Islanders',
+  TBL:'Tampa Bay Lightning',  MIN:'Minnesota Wild',        SEA:'Seattle Kraken',
+  EDM:'Edmonton Oilers',      VAN:'Vancouver Canucks',     ANA:'Anaheim Ducks',
+  FLA:'Florida Panthers',     UTA:'Utah Mammoth',          CHI:'Chicago Blackhawks',
+  TOR:'Toronto Maple Leafs',  LAK:'Los Angeles Kings',     CGY:'Calgary Flames',
+  WPG:'Winnipeg Jets',        NJD:'New Jersey Devils',     NSH:'Nashville Predators',
   PIT:'Pittsburgh Penguins',  SJS:'San Jose Sharks',
 };
 
-/* NHL name → our abbreviation (handles API variations) */
-const NAME_TO_ABBR = {
+const NAME_MAP = {
   'Colorado Avalanche':'COL','Ottawa Senators':'OTT','Detroit Red Wings':'DET',
   'Dallas Stars':'DAL','St. Louis Blues':'STL','Boston Bruins':'BOS',
   'Vegas Golden Knights':'VGK','Montreal Canadiens':'MTL','Montréal Canadiens':'MTL',
@@ -514,67 +366,104 @@ const NAME_TO_ABBR = {
   'Nashville Predators':'NSH','Pittsburgh Penguins':'PIT','San Jose Sharks':'SJS',
 };
 
-/* ── STATE ── */
-let teamPts = {}, teamRec = {}, proxyUsed = '';
+/* ═══════════════════════════════════════════
+   PERSISTENCE (localStorage)
+═══════════════════════════════════════════ */
+const LS_KEY = 'puckpool_v2';
+const DEFAULT_PW = 'puckpool';
 
-/* ── DATA FETCHING ── */
-const NHL_URL = 'https://api-web.nhle.com/v1/standings/now';
+function loadStore() {
+  try {
+    const raw = localStorage.getItem(LS_KEY);
+    if (raw) return JSON.parse(raw);
+  } catch(e) {}
+  return {
+    password: DEFAULT_PW,
+    seasons: DEFAULT_SEASONS,
+    activeSeason: '20252026',
+    playersBySeason: { '20252026': DEFAULT_PLAYERS },
+  };
+}
 
+function saveStore() {
+  try { localStorage.setItem(LS_KEY, JSON.stringify(store)); } catch(e) {}
+}
+
+let store = loadStore();
+
+function getSeasonPlayers(seasonId) {
+  if (store.playersBySeason[seasonId]) return store.playersBySeason[seasonId];
+  // Default: copy from most recent season or defaults
+  return JSON.parse(JSON.stringify(DEFAULT_PLAYERS));
+}
+
+function seasonLabel(id) {
+  // e.g. 20252026 → "2025–26"
+  const s = String(id);
+  if (s.length === 8) return s.slice(0,4) + '–' + s.slice(6);
+  return s;
+}
+
+/* ═══════════════════════════════════════════
+   NHL API / PROXIES
+═══════════════════════════════════════════ */
 const PROXIES = [
   u => `https://api.allorigins.win/raw?url=${encodeURIComponent(u)}`,
   u => `https://corsproxy.io/?${encodeURIComponent(u)}`,
   u => `https://api.codetabs.com/v1/proxy?quest=${encodeURIComponent(u)}`,
 ];
+let workingProxy = 0;
 
-async function tryProxy(proxyFn, url) {
-  const res = await fetch(proxyFn(url), { signal: AbortSignal.timeout(9000) });
-  if (!res.ok) throw new Error(`HTTP ${res.status}`);
-  return res.json();
-}
-
-async function fetchStandings() {
-  let lastErr;
-  for (let i = 0; i < PROXIES.length; i++) {
+async function fetchNHL(url) {
+  for (let i = workingProxy; i < PROXIES.length; i++) {
     try {
-      const data = await tryProxy(PROXIES[i], NHL_URL);
-      if (!data?.standings?.length) throw new Error('Empty response');
-
-      teamPts = {}; teamRec = {};
-      for (const s of data.standings) {
-        let abbr = s.teamAbbrev?.default;
-        if (!abbr || !TEAMS[abbr]) {
-          abbr = NAME_TO_ABBR[s.teamName?.default] || NAME_TO_ABBR[s.teamCommonName?.default];
-        }
-        if (!abbr || !TEAMS[abbr]) continue;
-        teamPts[abbr] = s.points ?? (s.wins * 2 + (s.otLosses ?? 0));
-        teamRec[abbr]  = { w: s.wins ?? 0, l: s.losses ?? 0, otl: s.otLosses ?? 0 };
-      }
-
-      if (Object.keys(teamPts).length < 20) throw new Error('Too few teams returned');
-      proxyUsed = ['allorigins','corsproxy','codetabs'][i];
-      return;
-    } catch (e) {
-      lastErr = e;
+      const res = await fetch(PROXIES[i](url), { signal: AbortSignal.timeout(10000) });
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      const data = await res.json();
+      workingProxy = i;
+      return data;
+    } catch(e) {
+      if (i === PROXIES.length - 1) throw e;
     }
   }
-  throw new Error(lastErr?.message || 'All proxies failed');
 }
 
-/* ── HELPERS ── */
-const total = p => p.teams.reduce((s, t) => s + (teamPts[t] ?? 0), 0);
-
-function ranked() {
-  return [...LEAGUE]
-    .filter(p => !p.extras)
-    .sort((a, b) => total(b) - total(a))
-    .map((p, i) => ({ ...p, rank: i + 1 }));
+function parseStandings(standings) {
+  const pts = {}, rec = {};
+  for (const s of standings) {
+    let abbr = s.teamAbbrev?.default;
+    if (!abbr || !ALL_NHL_TEAMS[abbr]) abbr = NAME_MAP[s.teamName?.default] || NAME_MAP[s.teamCommonName?.default];
+    if (!abbr) continue;
+    pts[abbr] = s.points ?? ((s.wins ?? 0) * 2 + (s.otLosses ?? 0));
+    rec[abbr]  = { w: s.wins ?? 0, l: s.losses ?? 0, otl: s.otLosses ?? 0 };
+  }
+  return { pts, rec };
 }
 
+/* season id → date string for NHL API, e.g. 20252026 → standings/now or standings/2024-04-18 */
+function getNHLUrl(seasonId, type) {
+  if (type === 'current') return 'https://api-web.nhle.com/v1/standings/now';
+  if (type === 'future')  return null;
+  // past: use end-of-season date (April of end year)
+  const endYear = String(seasonId).slice(4);
+  return `https://api-web.nhle.com/v1/standings/${endYear}-04-18`;
+}
+
+/* ═══════════════════════════════════════════
+   APP STATE
+═══════════════════════════════════════════ */
+let currentPts = {}, currentRec = {}, proxyLabel = '';
+let activeSeason = store.activeSeason || store.seasons[0]?.id;
+
+/* ═══════════════════════════════════════════
+   DOM HELPERS
+═══════════════════════════════════════════ */
 const h = (tag, attrs, ...children) => {
   const el = document.createElement(tag);
-  for (const [k, v] of Object.entries(attrs || {})) {
+  for (const [k,v] of Object.entries(attrs || {})) {
     if (k === 'class') el.className = v;
     else if (k === 'style') el.style.cssText = v;
+    else if (k.startsWith('on')) el.addEventListener(k.slice(2), v);
     else el.setAttribute(k, v);
   }
   for (const c of children.flat()) {
@@ -584,155 +473,422 @@ const h = (tag, attrs, ...children) => {
   return el;
 };
 
-/* ── RENDER ── */
-function buildApp() {
-  const players = ranked();
-  const extras  = LEAGUE.find(p => p.extras);
-  const top3    = players.slice(0, 3);
-  const now     = new Date().toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
+/* ═══════════════════════════════════════════
+   SEASON PILLS
+═══════════════════════════════════════════ */
+function renderSeasonPills() {
+  const container = document.getElementById('season-pills');
+  container.innerHTML = '';
+  for (const s of store.seasons) {
+    const pill = h('button', {
+      class: `season-pill${s.type === 'future' ? ' future' : ''}${s.id === activeSeason ? ' active' : ''}`,
+      onclick: () => selectSeason(s.id),
+    }, s.label || seasonLabel(s.id));
+    container.append(pill);
+  }
+  // Update header badge
+  const active = store.seasons.find(s => s.id === activeSeason);
+  const badge = document.getElementById('hdr-season-badge');
+  if (badge && active) badge.textContent = (active.label || seasonLabel(active.id)) + ' Season';
+}
 
-  const app = document.getElementById('app');
-  app.innerHTML = '';
-  app.style.animation = 'fadeIn 0.3s ease';
+function selectSeason(id) {
+  activeSeason = id;
+  store.activeSeason = id;
+  saveStore();
+  renderSeasonPills();
+  loadStandings();
+}
 
-  /* meta row */
-  app.append(
-    h('div', { class: 'meta-row' },
-      h('div', { class: 'last-updated' }, `Updated ${now} · auto-refreshes every 10 min`),
-      h('div', { class: 'data-source'  }, `via ${proxyUsed}`)
-    )
-  );
+/* ═══════════════════════════════════════════
+   LOAD STANDINGS
+═══════════════════════════════════════════ */
+async function loadStandings() {
+  const main = document.getElementById('main-content');
+  const season = store.seasons.find(s => s.id === activeSeason);
+  if (!season) return;
 
-  /* podium */
-  app.append(h('div', { class: 'section-label' }, 'Top 3'));
-  app.append(
-    h('div', { class: 'podium' },
-      makePodiumCard(top3[0], 'first'),
-      makePodiumCard(top3[1], 'second'),
-      makePodiumCard(top3[2], 'third')
-    )
-  );
+  // Future season — no data yet
+  if (season.type === 'future') {
+    currentPts = {}; currentRec = {};
+    renderPage(true);
+    return;
+  }
 
-  /* leaderboard */
-  app.append(h('div', { class: 'section-label' }, 'Full Standings'));
-  const lb = h('div', { class: 'leaderboard' });
+  main.innerHTML = '<div class="state-box"><div class="spinner"></div><div>Loading standings…</div></div>';
 
-  lb.append(
-    h('div', { class: 'lb-grid lb-header' },
-      h('div', {}, '#'),
-      h('div', {}, 'Player'),
-      h('div', { style: 'text-align:right' }, 'Team 1'),
-      h('div', { style: 'text-align:right' }, 'Team 2'),
-      h('div', { class: 'col-hide', style: 'text-align:right' }, 'Team 3'),
-      h('div', { style: 'text-align:right' }, 'Total')
-    )
-  );
+  try {
+    const url = getNHLUrl(season.id, season.type);
+    const data = await fetchNHL(url);
+    if (!data?.standings) throw new Error('Unexpected API response');
+    const parsed = parseStandings(data.standings);
+    currentPts = parsed.pts;
+    currentRec = parsed.rec;
+    proxyLabel = ['allorigins','corsproxy','codetabs'][workingProxy];
+    renderPage(false);
+    if (season.type === 'current') setTimeout(loadStandings, 10 * 60 * 1000);
+  } catch(err) {
+    main.innerHTML = '';
+    main.append(h('div', { class:'error-box' },
+      h('strong', {}, 'Could not load standings'),
+      err.message,
+      h('br', {}),
+      h('button', { class:'retry-btn', onclick: loadStandings }, '↺ Retry')
+    ));
+  }
+}
 
-  for (const p of players) lb.append(makeRow(p, false));
-  if (extras) lb.append(makeRow(extras, true));
-  app.append(lb);
+/* ═══════════════════════════════════════════
+   RENDER PAGE
+═══════════════════════════════════════════ */
+function playerTotal(p) {
+  return p.teams.reduce((s, t) => s + (currentPts[t] ?? 0), 0);
+}
 
-  /* team grid */
-  app.append(
-    h('div', { class: 'section-label', style: 'margin-top:2.5rem' }, 'All Teams — Points This Season')
-  );
-  app.append(
-    h('div', { class: 'team-grid' },
-      ...Object.keys(TEAMS).map(makeTeamCard)
-    )
-  );
+function getRankedPlayers() {
+  const players = getSeasonPlayers(activeSeason);
+  return [...players]
+    .filter(p => !p.extras)
+    .sort((a, b) => playerTotal(b) - playerTotal(a))
+    .map((p, i) => ({ ...p, rank: i + 1 }));
+}
+
+function renderPage(isFuture) {
+  const main = document.getElementById('main-content');
+  const season = store.seasons.find(s => s.id === activeSeason);
+  const players = getSeasonPlayers(activeSeason);
+  main.innerHTML = '';
+
+  if (isFuture) {
+    main.append(h('div', { class:'info-banner' },
+      `🏒 The ${season.label || seasonLabel(season.id)} season hasn't started yet. `,
+      'Check back when the season begins — standings will update automatically.',
+      h('br', {}), h('br', {}),
+      'You can pre-configure player teams using the ', h('strong', {}, '⚙ Admin panel'), '.'
+    ));
+  }
+
+  const ranked = getRankedPlayers();
+  const extras = players.find(p => p.extras);
+  const now = new Date().toLocaleTimeString('en-US', { hour:'2-digit', minute:'2-digit' });
+
+  if (!isFuture) {
+    main.append(h('div', { class:'meta-row' },
+      h('div', { class:'last-updated' }, `Updated ${now} · auto-refreshes every 10 min`),
+      h('div', { class:'data-source' }, `via ${proxyLabel}`)
+    ));
+  }
+
+  // PODIUM — 1st, 2nd, 3rd left to right
+  if (ranked.length >= 1 && !isFuture) {
+    main.append(h('div', { class:'section-label' }, 'Top 3'));
+    main.append(h('div', { class:'podium' },
+      makePodiumCard(ranked[0], 'first'),
+      makePodiumCard(ranked[1], 'second'),
+      makePodiumCard(ranked[2], 'third'),
+    ));
+  }
+
+  // LEADERBOARD
+  main.append(h('div', { class:'section-label' }, isFuture ? 'Players This Season' : 'Full Standings'));
+  const lb = h('div', { class:'leaderboard' });
+  lb.append(h('div', { class:'lb-grid lb-header' },
+    h('div', {}, '#'),
+    h('div', {}, 'Player'),
+    h('div', { style:'text-align:right' }, 'Team 1'),
+    h('div', { style:'text-align:right' }, 'Team 2'),
+    h('div', { class:'col-hide', style:'text-align:right' }, 'Team 3'),
+    h('div', { style:'text-align:right' }, isFuture ? 'Teams' : 'Total'),
+  ));
+  for (const p of ranked) lb.append(makeRow(p, false, isFuture));
+  if (extras) lb.append(makeRow(extras, true, isFuture));
+  main.append(lb);
+
+  // TEAM GRID (only for live/past seasons)
+  if (!isFuture) {
+    main.append(h('div', { class:'section-label', style:'margin-top:2.5rem' }, 'All Teams — Points This Season'));
+    const grid = h('div', { class:'team-grid' });
+    for (const abbr of Object.keys(ALL_NHL_TEAMS)) {
+      const allPlayers = getSeasonPlayers(activeSeason);
+      const owner = allPlayers.find(p => p.teams.includes(abbr));
+      const ownerLabel = owner ? (owner.extras ? 'Extras' : owner.name) : '';
+      grid.append(h('div', { class:'team-card' },
+        h('div', { class:'team-abbr' }, abbr),
+        h('div', { class:'team-name-sm' }, ALL_NHL_TEAMS[abbr]),
+        h('div', { class:'team-pts' }, String(currentPts[abbr] ?? '—')),
+        currentRec[abbr] ? h('div', { class:'team-record' }, `${currentRec[abbr].w}-${currentRec[abbr].l}-${currentRec[abbr].otl}`) : null,
+        ownerLabel ? h('div', { class:'team-owner' }, ownerLabel) : null,
+      ));
+    }
+    main.append(grid);
+  }
 }
 
 function makePodiumCard(p, cls) {
   if (!p) return h('div', {});
-  const emoji = { first: '🥇', second: '🥈', third: '🥉' }[cls];
-  return h('div', { class: `podium-card ${cls}` },
-    h('div', { class: 'podium-rank' }, emoji),
-    h('div', { class: 'podium-name' }, p.name),
-    h('div', { class: 'podium-pts'  }, `${total(p)}`),
-    h('div', { class: 'podium-pts-label' }, 'pts'),
-    h('div', { class: 'podium-teams' },
-      ...p.teams.map(t =>
-        h('span', { class: 'mini-chip' }, `${t} ${teamPts[t] ?? '—'}`)
-      )
+  const emoji = { first:'🥇', second:'🥈', third:'🥉' }[cls];
+  const tot = playerTotal(p);
+  return h('div', { class:`podium-card ${cls}` },
+    h('div', { class:'podium-rank' }, emoji),
+    h('div', { class:'podium-name' }, p.name),
+    h('div', { class:'podium-pts' }, String(tot)),
+    h('div', { class:'podium-pts-label' }, 'pts'),
+    h('div', { class:'podium-teams' },
+      ...p.teams.map(t => h('span', { class:'mini-chip' }, `${t} ${currentPts[t] ?? '—'}`))
     )
   );
 }
 
-function makeRow(p, isExtras) {
-  const pts   = p.teams.map(t => teamPts[t] ?? 0);
+function makeRow(p, isExtras, isFuture) {
+  const pts   = p.teams.map(t => currentPts[t] ?? 0);
+  const tot   = playerTotal(p);
   const medal = p.rank === 1 ? '🥇' : p.rank === 2 ? '🥈' : p.rank === 3 ? '🥉' : String(p.rank ?? '—');
+  const nameEl = h('div', { class:'player-name' }, p.name);
+  if (isExtras) nameEl.append(h('span', { class:'extras-tag' }, 'unowned'));
 
-  const nameEl = h('div', { class: 'player-name' }, p.name);
-  if (isExtras) nameEl.append(h('span', { class: 'extras-tag' }, 'unowned'));
-
-  return h('div', { class: `lb-grid lb-row${isExtras ? ' extras' : ''}` },
-    h('div', { class: `rank-cell${p.rank <= 3 ? ' top' : ''}` }, medal),
+  return h('div', { class:`lb-grid lb-row${isExtras ? ' extras' : ''}` },
+    h('div', { class:`rank-cell${p.rank <= 3 ? ' top' : ''}` }, isExtras ? '—' : medal),
     h('div', {},
       nameEl,
-      h('div', { class: 'player-chips' },
-        ...p.teams.map(t => h('span', { class: 'team-chip' }, t))
-      )
+      h('div', { class:'player-chips' }, ...p.teams.map(t => h('span', { class:'team-chip' }, t)))
     ),
-    h('div', { class: 'pts-cell' },
-      h('span', { class: 'pt-abbr' }, p.teams[0]),
-      String(pts[0])
+    h('div', { class:'pts-cell' },
+      h('span', { class:'pt-abbr' }, p.teams[0] ?? ''),
+      isFuture ? '—' : String(pts[0])
     ),
-    h('div', { class: 'pts-cell' },
-      h('span', { class: 'pt-abbr' }, p.teams[1]),
-      String(pts[1])
+    h('div', { class:'pts-cell' },
+      h('span', { class:'pt-abbr' }, p.teams[1] ?? ''),
+      isFuture ? '—' : String(pts[1])
     ),
-    h('div', { class: 'pts-cell col-hide' },
-      h('span', { class: 'pt-abbr' }, p.teams[2] ?? '—'),
-      String(pts[2] ?? '—')
+    h('div', { class:'pts-cell col-hide' },
+      h('span', { class:'pt-abbr' }, p.teams[2] ?? '—'),
+      isFuture ? '—' : String(pts[2] ?? '—')
     ),
-    h('div', { class: 'total-cell', style: isExtras ? 'color:var(--muted)' : '' },
-      String(total(p))
+    h('div', { class:'total-cell', style: isExtras ? 'color:var(--muted)' : '' },
+      isFuture ? String(p.teams.length) : String(tot)
     )
   );
 }
 
-function makeTeamCard(abbr) {
-  const pts   = teamPts[abbr] ?? '—';
-  const rec   = teamRec[abbr];
-  const owner = LEAGUE.find(p => p.teams.includes(abbr));
-  const ownerLabel = owner ? (owner.extras ? 'Extras' : owner.name) : '';
-
-  return h('div', { class: 'team-card' },
-    h('div', { class: 'team-abbr' }, abbr),
-    h('div', { class: 'team-name'  }, TEAMS[abbr]),
-    h('div', { class: 'team-pts'   }, String(pts)),
-    rec ? h('div', { class: 'team-record' }, `${rec.w}-${rec.l}-${rec.otl}`) : null,
-    ownerLabel ? h('div', { class: 'team-owner' }, ownerLabel) : null
-  );
+/* ═══════════════════════════════════════════
+   PASSWORD
+═══════════════════════════════════════════ */
+function openAdmin() {
+  document.getElementById('pw-input').value = '';
+  document.getElementById('pw-error').classList.add('hidden');
+  document.getElementById('pw-overlay').classList.remove('hidden');
+  setTimeout(() => document.getElementById('pw-input').focus(), 100);
 }
 
-/* ── INIT ── */
-async function init() {
-  document.getElementById('app').innerHTML = `
-    <div class="state-box">
-      <div class="spinner"></div>
-      <div>Fetching NHL standings…</div>
-      <div class="state-sub">Trying data sources…</div>
-    </div>`;
+function closePwOverlay() {
+  document.getElementById('pw-overlay').classList.add('hidden');
+}
 
-  try {
-    await fetchStandings();
-    buildApp();
-    setTimeout(init, 10 * 60 * 1000); /* refresh every 10 min */
-  } catch (err) {
-    document.getElementById('app').innerHTML = '';
-    const box = h('div', { class: 'error-box' },
-      h('strong', {}, 'Could not load standings'),
-      `${err.message}. All CORS proxies may be temporarily down — this is common on free services. Try again in a moment.`,
-      h('br', {}),
-      h('button', { class: 'retry-btn', onclick: 'init()' }, '↺ Retry')
-    );
-    document.getElementById('app').append(box);
+function checkPw() {
+  const val = document.getElementById('pw-input').value;
+  if (val === store.password) {
+    closePwOverlay();
+    openAdminPanel();
+  } else {
+    document.getElementById('pw-error').classList.remove('hidden');
+    document.getElementById('pw-input').value = '';
+    document.getElementById('pw-input').focus();
   }
 }
 
-init();
+function changePassword() {
+  const cur     = document.getElementById('pw-current').value;
+  const nw      = document.getElementById('pw-new').value;
+  const confirm = document.getElementById('pw-confirm').value;
+  const errEl   = document.getElementById('pw-change-error');
+  errEl.classList.remove('hidden');
+
+  if (cur !== store.password) { errEl.textContent = 'Current password is incorrect.'; return; }
+  if (nw.length < 4)          { errEl.textContent = 'New password must be at least 4 characters.'; return; }
+  if (nw !== confirm)         { errEl.textContent = 'Passwords do not match.'; return; }
+
+  store.password = nw;
+  saveStore();
+  errEl.classList.add('hidden');
+  ['pw-current','pw-new','pw-confirm'].forEach(id => document.getElementById(id).value = '');
+  showToast('Password updated');
+}
+
+/* ═══════════════════════════════════════════
+   ADMIN PANEL
+═══════════════════════════════════════════ */
+function openAdminPanel() {
+  switchAdminTab('players', document.querySelector('.admin-tab'));
+  populatePlayerCards();
+  populateSeasonsList();
+  document.getElementById('admin-overlay').classList.remove('hidden');
+}
+
+function closeAdmin() {
+  document.getElementById('admin-overlay').classList.add('hidden');
+}
+
+function switchAdminTab(tab, btn) {
+  ['players','seasons','password'].forEach(t => {
+    document.getElementById(`admin-tab-${t}`).style.display = t === tab ? 'block' : 'none';
+  });
+  document.querySelectorAll('.admin-tab').forEach(b => b.classList.remove('active'));
+  if (btn) btn.classList.add('active');
+}
+
+/* ── PLAYER CARDS ── */
+function populatePlayerCards() {
+  const season = store.seasons.find(s => s.id === activeSeason);
+  document.getElementById('editing-season-label').textContent =
+    `Editing: ${season ? (season.label || seasonLabel(season.id)) : activeSeason} Season`;
+
+  const list = document.getElementById('player-cards-list');
+  list.innerHTML = '';
+  const players = getSeasonPlayers(activeSeason);
+  players.forEach((p, i) => list.append(makePlayerCard(p, i, players.length)));
+}
+
+function makePlayerCard(p, idx, total) {
+  const card = h('div', { class:'player-edit-card' });
+
+  const nameInput = h('input', {
+    class: 'player-edit-name-input',
+    type: 'text',
+    value: p.name,
+    placeholder: 'Player name',
+  });
+
+  const isExtrasCheck = h('label', { style:'display:flex;align-items:center;gap:5px;font-size:.75rem;color:var(--muted);cursor:pointer;white-space:nowrap' },
+    Object.assign(h('input', { type:'checkbox' }), { checked: !!p.extras }),
+    'Unowned'
+  );
+
+  const delBtn = h('button', { class:'del-btn', title:'Remove player', onclick: () => {
+    card.remove();
+  }}, '✕');
+
+  card.append(h('div', { class:'player-edit-header' }, nameInput, isExtrasCheck, delBtn));
+
+  const teamsRow = h('div', { class:'teams-row' });
+  const addTeamBtn = h('button', { class:'btn btn-ghost', style:'padding:4px 10px;font-size:.75rem', onclick: () => {
+    const inp = h('input', { class:'team-abbr-input', type:'text', maxlength:'3', placeholder:'XXX' });
+    teamsRow.insertBefore(inp, addTeamBtn);
+    inp.focus();
+  }}, '+ Team');
+
+  // Existing teams
+  (p.teams || []).forEach(t => {
+    teamsRow.append(h('input', { class:'team-abbr-input', type:'text', maxlength:'3', placeholder:'XXX', value:t }));
+  });
+  teamsRow.append(addTeamBtn);
+  card.append(h('div', { style:'font-size:.7rem;color:var(--muted);margin-bottom:.4rem' }, 'Teams (abbreviations):'));
+  card.append(teamsRow);
+
+  return card;
+}
+
+function addPlayerCard() {
+  const list = document.getElementById('player-cards-list');
+  const newPlayer = { name: 'New Player', teams: ['XXX'], extras: false };
+  list.append(makePlayerCard(newPlayer, list.children.length, list.children.length + 1));
+}
+
+function savePlayers() {
+  const cards = document.querySelectorAll('#player-cards-list .player-edit-card');
+  const players = [];
+  cards.forEach(card => {
+    const name = card.querySelector('.player-edit-name-input').value.trim();
+    if (!name) return;
+    const extras = card.querySelector('input[type=checkbox]').checked;
+    const teamInputs = card.querySelectorAll('.team-abbr-input');
+    const teams = [...teamInputs].map(i => i.value.trim().toUpperCase()).filter(t => t.length >= 2);
+    if (teams.length === 0) return;
+    players.push({ name, teams, ...(extras ? { extras: true } : {}) });
+  });
+  if (players.length === 0) { alert('Add at least one player.'); return; }
+  store.playersBySeason[activeSeason] = players;
+  saveStore();
+  closeAdmin();
+  renderPage(store.seasons.find(s => s.id === activeSeason)?.type === 'future');
+  showToast('Players saved');
+}
+
+/* ── SEASONS ── */
+function populateSeasonsList() {
+  const list = document.getElementById('seasons-list');
+  list.innerHTML = '';
+  for (const s of store.seasons) {
+    const isActive = s.id === activeSeason;
+    const row = h('div', { class:'season-edit-row' },
+      h('span', { class:'se-label' }, s.label || seasonLabel(s.id)),
+      h('span', { class:'se-type' }, s.type),
+      isActive ? h('span', { class:'season-active-badge' }, 'viewing') : null,
+      h('button', { class:'btn btn-ghost', style:'padding:4px 12px;font-size:.75rem', onclick: () => {
+        selectSeason(s.id);
+        populatePlayerCards();
+        document.getElementById('editing-season-label').textContent =
+          `Editing: ${s.label || seasonLabel(s.id)} Season`;
+      }}, 'Select'),
+      store.seasons.length > 1 ? h('button', { class:'btn btn-danger', style:'padding:4px 10px;font-size:.75rem', onclick: () => {
+        if (!confirm(`Remove ${s.label || seasonLabel(s.id)} season? Player data for this season will also be deleted.`)) return;
+        store.seasons = store.seasons.filter(x => x.id !== s.id);
+        delete store.playersBySeason[s.id];
+        if (activeSeason === s.id) {
+          activeSeason = store.seasons[0]?.id;
+          store.activeSeason = activeSeason;
+        }
+        saveStore();
+        renderSeasonPills();
+        populateSeasonsList();
+        loadStandings();
+      }}, 'Remove') : null,
+    );
+    list.append(row);
+  }
+}
+
+function addSeason() {
+  const idRaw  = document.getElementById('new-season-id').value.trim().replace(/\D/g,'');
+  const type   = document.getElementById('new-season-type').value;
+
+  if (idRaw.length !== 8) { alert('Season ID must be 8 digits, e.g. 20262027'); return; }
+  if (store.seasons.find(s => s.id === idRaw)) { alert('That season already exists.'); return; }
+
+  const label = seasonLabel(idRaw);
+  const newSeason = { id: idRaw, label, type };
+  store.seasons.push(newSeason);
+  // Pre-populate players by copying from activeSeason
+  if (!store.playersBySeason[idRaw]) {
+    store.playersBySeason[idRaw] = JSON.parse(JSON.stringify(getSeasonPlayers(activeSeason)));
+  }
+  saveStore();
+  renderSeasonPills();
+  populateSeasonsList();
+  document.getElementById('new-season-id').value = '';
+  showToast(`${label} season added`);
+}
+
+/* ═══════════════════════════════════════════
+   TOAST
+═══════════════════════════════════════════ */
+function showToast(msg) {
+  const t = document.getElementById('save-toast');
+  t.textContent = '✓ ' + msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 2200);
+}
+
+/* ═══════════════════════════════════════════
+   BOOT
+═══════════════════════════════════════════ */
+// Ensure activeSeason exists in seasons list
+if (!store.seasons.find(s => s.id === activeSeason)) {
+  activeSeason = store.seasons[0]?.id;
+  store.activeSeason = activeSeason;
+}
+renderSeasonPills();
+loadStandings();
 </script>
+
 </body>
 </html>
