@@ -144,25 +144,101 @@ main{max-width:1080px;margin:0 auto;padding:1.75rem 1.25rem}
 'use strict';
 
 /* ═══════════════════════════════════════════
-   DEFAULT DATA
-═══════════════════════════════════════════ */
-const PLAYERS = [
-  { name:'Ian',   teams:['COL','OTT','DET'] },
-  { name:'Will',  teams:['DAL','STL','BOS'] },
-  { name:'Dave',  teams:['VGK','MTL','PHI'] },
-  { name:'Dan',   teams:['CAR','NYR','CBJ'] },
-  { name:'Monti', teams:['WSH','BUF','NYI'] },
-  { name:'Soap',  teams:['TBL','MIN','SEA'] },
-  { name:'Corey', teams:['EDM','VAN','ANA'] },
-  { name:'Schum', teams:['FLA','UTA','CHI'] },
-  { name:'Paul',  teams:['TOR','LAK','CGY'] },
-  { name:'Henry', teams:['WPG','NJD','NSH'] },
-  { name:'Extras', teams:['PIT','SJS'], extras:true },
-];
+   EDITABLE LEAGUE CONFIG (players, teams, seasons)
+   ───────────────────────────────────────────
+   How to use:
+   • Each season has its OWN `players` list so history is preserved.
+   • Edit teams inside the season you want to change (usually next year's future season).
+   • Flip seasons by changing `type`:
+       - future → current (when season starts)
+       - current → past (when season ends)
+   • Past seasons use `finalDate` (YYYY-MM-DD) to lock in a snapshot of standings.
 
-const SEASONS = [
-  { id:'20252026', label:'2025-26', type:'current' },
-];
+   Season id format: YYYYYYYY (startYear + endYear), e.g. 20252026 for 2025-26.
+   ─────────────────────────────────────────── */
+
+const SEASON_CONFIG = {
+  // Current season
+  '20252026': {
+    label: '2025-26',
+    type: 'current', // 'current' | 'past' | 'future'
+    finalDate: '2026-04-18', // used only when type === 'past' (edit to actual final standings date)
+    players: [
+      { name:'Ian',   teams:['COL','OTT','DET'] },
+      { name:'Will',  teams:['DAL','STL','BOS'] },
+      { name:'Dave',  teams:['VGK','MTL','PHI'] },
+      { name:'Dan',   teams:['CAR','NYR','CBJ'] },
+      { name:'Monti', teams:['WSH','BUF','NYI'] },
+      { name:'Soap',  teams:['TBL','MIN','SEA'] },
+      { name:'Corey', teams:['EDM','VAN','ANA'] },
+      { name:'Schum', teams:['FLA','UTA','CHI'] },
+      { name:'Paul',  teams:['TOR','LAK','CGY'] },
+      { name:'Henry', teams:['WPG','NJD','NSH'] },
+      { name:'Extras', teams:['PIT','SJS'], extras:true },
+    ],
+  },
+
+  // Future seasons (edit these teams after each draft)
+  '20262027': {
+    label: '2026-27',
+    type: 'future',
+    finalDate: '2027-04-18', // used only when type === 'past'
+    players: [
+      { name:'Ian',   teams:['COL','OTT','DET'] },
+      { name:'Will',  teams:['DAL','STL','BOS'] },
+      { name:'Dave',  teams:['VGK','MTL','PHI'] },
+      { name:'Dan',   teams:['CAR','NYR','CBJ'] },
+      { name:'Monti', teams:['WSH','BUF','NYI'] },
+      { name:'Soap',  teams:['TBL','MIN','SEA'] },
+      { name:'Corey', teams:['EDM','VAN','ANA'] },
+      { name:'Schum', teams:['FLA','UTA','CHI'] },
+      { name:'Paul',  teams:['TOR','LAK','CGY'] },
+      { name:'Henry', teams:['WPG','NJD','NSH'] },
+      { name:'Extras', teams:['PIT','SJS'], extras:true },
+    ],
+  },
+  '20272028': {
+    label: '2027-28',
+    type: 'future',
+    finalDate: '2028-04-18', // used only when type === 'past'
+    players: [
+      { name:'Ian',   teams:['COL','OTT','DET'] },
+      { name:'Will',  teams:['DAL','STL','BOS'] },
+      { name:'Dave',  teams:['VGK','MTL','PHI'] },
+      { name:'Dan',   teams:['CAR','NYR','CBJ'] },
+      { name:'Monti', teams:['WSH','BUF','NYI'] },
+      { name:'Soap',  teams:['TBL','MIN','SEA'] },
+      { name:'Corey', teams:['EDM','VAN','ANA'] },
+      { name:'Schum', teams:['FLA','UTA','CHI'] },
+      { name:'Paul',  teams:['TOR','LAK','CGY'] },
+      { name:'Henry', teams:['WPG','NJD','NSH'] },
+      { name:'Extras', teams:['PIT','SJS'], extras:true },
+    ],
+  },
+  '20282029': {
+    label: '2028-29',
+    type: 'future',
+    finalDate: '2029-04-18', // used only when type === 'past'
+    players: [
+      { name:'Ian',   teams:['COL','OTT','DET'] },
+      { name:'Will',  teams:['DAL','STL','BOS'] },
+      { name:'Dave',  teams:['VGK','MTL','PHI'] },
+      { name:'Dan',   teams:['CAR','NYR','CBJ'] },
+      { name:'Monti', teams:['WSH','BUF','NYI'] },
+      { name:'Soap',  teams:['TBL','MIN','SEA'] },
+      { name:'Corey', teams:['EDM','VAN','ANA'] },
+      { name:'Schum', teams:['FLA','UTA','CHI'] },
+      { name:'Paul',  teams:['TOR','LAK','CGY'] },
+      { name:'Henry', teams:['WPG','NJD','NSH'] },
+      { name:'Extras', teams:['PIT','SJS'], extras:true },
+    ],
+  },
+};
+
+// Derived seasons list (controls the pill bar order)
+const SEASONS = Object.keys(SEASON_CONFIG)
+  .sort() // chronological by id
+  .map(id => ({ id, label: SEASON_CONFIG[id].label, type: SEASON_CONFIG[id].type }));
 
 const ALL_NHL_TEAMS = {
   COL:'Colorado Avalanche',   OTT:'Ottawa Senators',      DET:'Detroit Red Wings',
@@ -193,8 +269,7 @@ const NAME_MAP = {
 };
 
 function getSeasonPlayers(seasonId) {
-  // If you add per-season player arrays, look them up here by seasonId
-  return PLAYERS;
+  return SEASON_CONFIG[String(seasonId)]?.players ?? [];
 }
 
 function seasonLabel(id) {
@@ -242,17 +317,21 @@ function parseStandings(standings) {
 /* season id → date string for NHL API, e.g. 20252026 → standings/now or standings/2024-04-18 */
 function getNHLUrl(seasonId, type) {
   if (type === 'current') return 'https://api-web.nhle.com/v1/standings/now';
-  if (type === 'future')  return null;
-  // past: use end-of-season date (April of end year)
-  const endYear = String(seasonId).slice(4);
-  return `https://api-web.nhle.com/v1/standings/${endYear}-04-18`;
+  if (type === 'future') return null;
+
+  // past: use a fixed snapshot date so scores stay correct even after moving to the next season.
+  // Prefer per-season `finalDate` (YYYY-MM-DD). Fallback: April 18 of the end year.
+  const cfg = SEASON_CONFIG[String(seasonId)];
+  const fallback = `${String(seasonId).slice(4)}-04-18`;
+  const date = cfg?.finalDate || fallback;
+  return `https://api-web.nhle.com/v1/standings/${date}`;
 }
 
 /* ═══════════════════════════════════════════
    APP STATE
 ═══════════════════════════════════════════ */
 let currentPts = {}, currentRec = {}, proxyLabel = '';
-let activeSeason = SEASONS[0]?.id;
+let activeSeason = (SEASONS.find(s => s.type === 'current')?.id) ?? SEASONS[0]?.id;
 
 /* ═══════════════════════════════════════════
    DOM HELPERS
