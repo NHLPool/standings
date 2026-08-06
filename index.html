@@ -38,6 +38,8 @@ header{background:var(--surface);border-bottom:1px solid var(--border);padding:1
 .season-pills{display:flex;gap:5px;flex-wrap:wrap}
 .season-pill{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.8rem;letter-spacing:.04em;padding:4px 13px;border-radius:20px;cursor:pointer;border:1px solid var(--border);background:transparent;color:var(--muted);transition:all .15s}
 .season-pill.active{background:rgba(59,130,246,.15);color:var(--ab);border-color:rgba(59,130,246,.35)}
+.season-pill.current{background:rgba(245,158,11,.14);color:var(--gold);border-color:rgba(245,158,11,.45);font-weight:800}
+.season-pill.current.active{background:rgba(34,197,94,.14);color:var(--green);border-color:rgba(34,197,94,.45)}
 .season-pill:hover:not(.active){color:var(--text);border-color:var(--border2)}
 .season-pill.future{font-style:italic}
 
@@ -158,11 +160,68 @@ main{max-width:1080px;margin:0 auto;padding:1.75rem 1.25rem}
    ─────────────────────────────────────────── */
 
 const SEASON_CONFIG = {
+
+  // Past Seasons
+
+   '20222023': {
+    label: '2022-23',
+    type: 'past',
+    finalDate: '2023-04-14', // used only when type === 'past'
+    players: [
+      { name:'Ian',   teams:['TOR','FLA','ARI'] },
+      { name:'Will',  teams:['CAR','VAN','DET'] },
+      { name:'Dave',  teams:['COL','NYI','BUF'] },
+      { name:'Dan',   teams:['TBL','PIT','CBJ'] },
+      { name:'Monti', teams:['EDM','NSH','ANA'] },
+      { name:'Soap',  teams:['WPG','OTT','STL'] },
+      { name:'Corey', teams:['MTL','NYR','DAL'] },
+      { name:'Schum', teams:['CAL','LAK','SEA'] },
+      { name:'Paul',  teams:['BOS','NJD','WAS'] },
+      { name:'Henry', teams:['VGK','MIN','PHI'] },
+      { name:'Extras', teams:['CHI','SJS'], extras:true },
+    ],
+   },
+    '20232024': {
+    label: '2023-24',
+    type: 'past',
+    finalDate: '2024-04-18', // used only when type === 'past'
+    players: [
+      { name:'Ian',   teams:['CAR','LAK','STL'] },
+      { name:'Will',  teams:['NYR','DAL','VAN'] },
+      { name:'Dave',  teams:['BOS','NJD','CHI'] },
+      { name:'Dan',   teams:['NYI','DET','MIN'] },
+      { name:'Monti', teams:['WSH','SEA','BUF'] },
+      { name:'Soap',  teams:['WPG','FLA','ANA'] },
+      { name:'Corey', teams:['EDM','OTT','CBJ'] },
+      { name:'Schum', teams:['ARI','CGY','COL'] },
+      { name:'Paul',  teams:['TBL','PIT','MTL'] },
+      { name:'Henry', teams:['TOR','NSH','VGK'] },
+      { name:'Extras', teams:['SJS','PHI'], extras:true },
+    ],
+   },
+    '20242025': {
+    label: '2024-25',
+    type: 'past',
+    finalDate: '2025-04-17', // used only when type === 'past'
+    players: [
+      { name:'Ian',   teams:['TOR','NSH','CHI'] },
+      { name:'Will',  teams:['WPG','VAN','NYI'] },
+      { name:'Dave',  teams:['DAL','CAR','MTL'] },
+      { name:'Dan',   teams:['COL','MIN','UTA'] },
+      { name:'Monti', teams:['OTT','BUF','BOS'] },
+      { name:'Soap',  teams:['EDM','CGY','DET'] },
+      { name:'Corey', teams:['FLA','PIT','ANA'] },
+      { name:'Schum', teams:['CBJ','SEA','SJS'] },
+      { name:'Paul',  teams:['VGK','STL','NJD'] },
+      { name:'Henry', teams:['LAK','TBL','NYR'] },
+      { name:'Extras', teams:['PHI','WSH'], extras:true },
+    ],
+   },
   // Current season
   '20252026': {
     label: '2025-26',
     type: 'current', // 'current' | 'past' | 'future'
-    finalDate: '2026-04-17', // used only when type === 'past' (edit to actual final standings date)
+    finalDate: '2026-04-18', // used only when type === 'past' (edit to actual final standings date)
     players: [
       { name:'Ian',   teams:['COL','OTT','DET'] },
       { name:'Will',  teams:['DAL','STL','BOS'] },
@@ -251,7 +310,7 @@ const ALL_NHL_TEAMS = {
   FLA:'Florida Panthers',     UTA:'Utah Mammoth',          CHI:'Chicago Blackhawks',
   TOR:'Toronto Maple Leafs',  LAK:'Los Angeles Kings',     CGY:'Calgary Flames',
   WPG:'Winnipeg Jets',        NJD:'New Jersey Devils',     NSH:'Nashville Predators',
-  PIT:'Pittsburgh Penguins',  SJS:'San Jose Sharks',
+  PIT:'Pittsburgh Penguins',  SJS:'San Jose Sharks',       ARI:'Arizona Coyotes',
 };
 
 const NAME_MAP = {
@@ -265,7 +324,7 @@ const NAME_MAP = {
   'Anaheim Ducks':'ANA','Florida Panthers':'FLA','Utah Mammoth':'UTA',
   'Chicago Blackhawks':'CHI','Toronto Maple Leafs':'TOR','Los Angeles Kings':'LAK',
   'Calgary Flames':'CGY','Winnipeg Jets':'WPG','New Jersey Devils':'NJD',
-  'Nashville Predators':'NSH','Pittsburgh Penguins':'PIT','San Jose Sharks':'SJS',
+  'Nashville Predators':'NSH','Pittsburgh Penguins':'PIT','San Jose Sharks':'SJS','Arizona Coyotes':'ARI',
 };
 
 function getSeasonPlayers(seasonId) {
@@ -291,7 +350,7 @@ let workingProxy = 0;
 async function fetchNHL(url) {
   for (let i = workingProxy; i < PROXIES.length; i++) {
     try {
-      const res = await fetch(PROXIES[i](url), { signal: AbortSignal.timeout(10000) });
+      const res = await fetch(PROXIES[i](url), { signal: AbortSignal.timeout(30000) });
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
       const data = await res.json();
       workingProxy = i;
@@ -359,7 +418,7 @@ function renderSeasonPills() {
   container.innerHTML = '';
   for (const s of SEASONS) {
     const pill = h('button', {
-      class: `season-pill${s.type === 'future' ? ' future' : ''}${s.id === activeSeason ? ' active' : ''}`,
+      class: `season-pill${s.type === 'future' ? ' future' : ''}${s.type === 'current' ? ' current' : ''}${s.id === activeSeason ? ' active' : ''}`,
       onclick: () => selectSeason(s.id),
     }, s.label || seasonLabel(s.id));
     container.append(pill);
