@@ -220,7 +220,7 @@ const SEASON_CONFIG = {
   // Current season
   '20252026': {
     label: '2025-26',
-    type: 'current', // 'current' | 'past' | 'future'
+    type: 'PAST', // 'current' | 'past' | 'future'
     finalDate: '2026-04-18', // used only when type === 'past' (edit to actual final standings date)
     players: [
       { name:'Ian',   teams:['COL','OTT','DET'] },
@@ -240,20 +240,20 @@ const SEASON_CONFIG = {
   // Future seasons (edit these teams after each draft)
   '20262027': {
     label: '2026-27',
-    type: 'future',
+    type: 'CURRENT',
     finalDate: '2027-04-18', // used only when type === 'past'
     players: [
-      { name:'Ian',   teams:['BUF','BUF','BUF'] },
-      { name:'Will',  teams:['BUF','BUF','BUF'] },
-      { name:'Dave',  teams:['BUF','BUF','BUF'] },
-      { name:'Dan',   teams:['BUF','BUF','BUF'] },
-      { name:'Monti', teams:['BUF','BUF','BUF'] },
-      { name:'Soap',  teams:['BUF','BUF','BUF'] },
-      { name:'Corey', teams:['BUF','BUF','BUF'] },
-      { name:'Schum', teams:['BUF','BUF','BUF'] },
-      { name:'Paul',  teams:['BUF','BUF','BUF'] },
-      { name:'Henry', teams:['BUF','BUF','BUF'] },
-      { name:'Extras', teams:['BUF','BUF'], extras:true },
+      { name:'Ian',   teams:['NYR','LAK','MIN'] },
+      { name:'Will',  teams:['TBL','MTL','XXX'] },
+      { name:'Dave',  teams:['CAR','SJS','CBJ'] },
+      { name:'Dan',   teams:['DAL','UTA','XXX'] },
+      { name:'Monti', teams:['BUF','OTT','TOR'] },
+      { name:'Soap',  teams:['COL','BOS','NYI'] },
+      { name:'Corey', teams:['WAS','ANA','XXX'] },
+      { name:'Schum', teams:['DET','VGK','PHI'] },
+      { name:'Paul',  teams:['FLA','STL','PIT] },
+      { name:'Henry', teams:['EDM','NJD','XXX'] },
+      { name:'Extras', teams:['XXX','XXX'], extras:true },
     ],
   },
   '20272028': {
