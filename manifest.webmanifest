@@ -1,0 +1,22 @@
+{
+  "name": "Fantasy NHL League",
+  "short_name": "NHL Pool",
+  "id": "/standings/",
+  "start_url": "/standings/",
+  "scope": "/standings/",
+  "display": "standalone",
+  "background_color": "#07111f",
+  "theme_color": "#07111f",
+  "icons": [
+    {
+      "src": "/standings/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/standings/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
