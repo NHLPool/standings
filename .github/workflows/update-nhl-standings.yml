@@ -3,7 +3,7 @@ name: Update NHL standings
 on:
   workflow_dispatch:
   schedule:
-    - cron: "12 * * * *"
+    - cron: "*/5 * * * *"
 
 permissions:
   contents: write
