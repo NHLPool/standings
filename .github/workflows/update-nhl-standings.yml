@@ -1,0 +1,95 @@
+name: Update NHL standings
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "10 * * * *"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-nhl-standings
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Download current NHL standings
+        shell: bash
+        run: |
+          set -euo pipefail
+          curl --fail --location --silent --show-error \
+            --retry 4 --retry-delay 5 --retry-all-errors \
+            --connect-timeout 15 --max-time 60 \
+            --header "Accept: application/json" \
+            --user-agent "Fantasy-NHL-Pool-GitHub-Action/1.0" \
+            "https://api-web.nhle.com/v1/standings/now" \
+            --output standings.raw.json
+
+      - name: Validate and prepare standings file
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import json
+          from datetime import datetime, timezone
+          from pathlib import Path
+
+          raw_path = Path("standings.raw.json")
+          output_path = Path("standings.json")
+          payload = json.loads(raw_path.read_text(encoding="utf-8"))
+          rows = payload.get("standings")
+
+          if not isinstance(rows, list) or len(rows) < 30:
+              raise SystemExit("NHL response did not contain a complete standings array")
+
+          teams = []
+          for row in rows:
+              abbreviation = row.get("teamAbbrev", {}).get("default")
+              if not abbreviation:
+                  continue
+              teams.append({
+                  "abbrev": abbreviation,
+                  "name": row.get("teamName", {}).get("default", abbreviation),
+                  "points": int(row.get("points", 0)),
+                  "gamesPlayed": int(row.get("gamesPlayed", 0)),
+                  "wins": int(row.get("wins", 0)),
+                  "losses": int(row.get("losses", 0)),
+                  "otLosses": int(row.get("otLosses", 0)),
+                  "seasonId": int(row.get("seasonId", 0)),
+                  "logo": row.get("teamLogo", "")
+              })
+
+          if len(teams) < 30:
+              raise SystemExit("Fewer than 30 valid NHL teams were returned")
+
+          output = {
+              "updatedAt": datetime.now(timezone.utc).isoformat(),
+              "source": "https://api-web.nhle.com/v1/standings/now",
+              "teams": teams
+          }
+          output_path.write_text(json.dumps(output, indent=2) + "\n", encoding="utf-8")
+          PY
+          rm standings.raw.json
+
+      - name: Commit updated standings
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [ -z "$(git status --porcelain -- standings.json)" ]; then
+            echo "No standings changes to commit."
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add standings.json
+          git commit -m "Update NHL standings"
+          git push
