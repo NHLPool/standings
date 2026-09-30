@@ -1,7 +1,29 @@
 {
-  "updatedAt": "2026-09-29T19:36:15.299464+00:00",
+  "updatedAt": "2026-09-30T00:23:40.750312+00:00",
   "source": "https://api-web.nhle.com/v1/standings/now",
   "teams": [
+    {
+      "abbrev": "FLA",
+      "name": "Florida Panthers",
+      "points": 2,
+      "gamesPlayed": 1,
+      "wins": 1,
+      "losses": 0,
+      "otLosses": 0,
+      "seasonId": 20262027,
+      "logo": "https://assets.nhle.com/logos/nhl/svg/FLA_light.svg"
+    },
+    {
+      "abbrev": "CAR",
+      "name": "Carolina Hurricanes",
+      "points": 1,
+      "gamesPlayed": 1,
+      "wins": 0,
+      "losses": 0,
+      "otLosses": 1,
+      "seasonId": 20262027,
+      "logo": "https://assets.nhle.com/logos/nhl/svg/CAR_light.svg"
+    },
     {
       "abbrev": "ANA",
       "name": "Anaheim Ducks",
@@ -45,17 +67,6 @@
       "otLosses": 0,
       "seasonId": 20262027,
       "logo": "https://assets.nhle.com/logos/nhl/svg/CGY_light.svg"
-    },
-    {
-      "abbrev": "CAR",
-      "name": "Carolina Hurricanes",
-      "points": 0,
-      "gamesPlayed": 0,
-      "wins": 0,
-      "losses": 0,
-      "otLosses": 0,
-      "seasonId": 20262027,
-      "logo": "https://assets.nhle.com/logos/nhl/svg/CAR_light.svg"
     },
     {
       "abbrev": "CHI",
@@ -122,17 +133,6 @@
       "otLosses": 0,
       "seasonId": 20262027,
       "logo": "https://assets.nhle.com/logos/nhl/svg/EDM_light.svg"
-    },
-    {
-      "abbrev": "FLA",
-      "name": "Florida Panthers",
-      "points": 0,
-      "gamesPlayed": 0,
-      "wins": 0,
-      "losses": 0,
-      "otLosses": 0,
-      "seasonId": 20262027,
-      "logo": "https://assets.nhle.com/logos/nhl/svg/FLA_light.svg"
     },
     {
       "abbrev": "LAK",
