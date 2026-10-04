@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-04T17:33:07.854237+00:00",
+  "updatedAt": "2026-10-04T21:20:01.818789+00:00",
   "source": "https://api-web.nhle.com/v1/standings/now",
   "teams": [
     {
@@ -111,6 +111,17 @@
       "otLosses": 1,
       "seasonId": 20262027,
       "logo": "https://assets.nhle.com/logos/nhl/svg/MTL_light.svg"
+    },
+    {
+      "abbrev": "WPG",
+      "name": "Winnipeg Jets",
+      "points": 3,
+      "gamesPlayed": 2,
+      "wins": 1,
+      "losses": 0,
+      "otLosses": 1,
+      "seasonId": 20262027,
+      "logo": "https://assets.nhle.com/logos/nhl/svg/WPG_light.svg"
     },
     {
       "abbrev": "FLA",
@@ -289,17 +300,6 @@
       "logo": "https://assets.nhle.com/logos/nhl/svg/PHI_light.svg"
     },
     {
-      "abbrev": "WPG",
-      "name": "Winnipeg Jets",
-      "points": 1,
-      "gamesPlayed": 1,
-      "wins": 0,
-      "losses": 0,
-      "otLosses": 1,
-      "seasonId": 20262027,
-      "logo": "https://assets.nhle.com/logos/nhl/svg/WPG_light.svg"
-    },
-    {
       "abbrev": "LAK",
       "name": "Los Angeles Kings",
       "points": 1,
@@ -314,9 +314,9 @@
       "abbrev": "DET",
       "name": "Detroit Red Wings",
       "points": 0,
-      "gamesPlayed": 1,
+      "gamesPlayed": 2,
       "wins": 0,
-      "losses": 1,
+      "losses": 2,
       "otLosses": 0,
       "seasonId": 20262027,
       "logo": "https://assets.nhle.com/logos/nhl/svg/DET_light.svg"
