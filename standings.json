@@ -1,7 +1,18 @@
 {
-  "updatedAt": "2026-10-04T21:20:01.818789+00:00",
+  "updatedAt": "2026-10-05T00:53:36.525560+00:00",
   "source": "https://api-web.nhle.com/v1/standings/now",
   "teams": [
+    {
+      "abbrev": "NYR",
+      "name": "New York Rangers",
+      "points": 6,
+      "gamesPlayed": 4,
+      "wins": 3,
+      "losses": 1,
+      "otLosses": 0,
+      "seasonId": 20262027,
+      "logo": "https://assets.nhle.com/logos/nhl/svg/NYR_light.svg"
+    },
     {
       "abbrev": "EDM",
       "name": "Edmonton Oilers",
@@ -23,17 +34,6 @@
       "otLosses": 0,
       "seasonId": 20262027,
       "logo": "https://assets.nhle.com/logos/nhl/svg/COL_light.svg"
-    },
-    {
-      "abbrev": "UTA",
-      "name": "Utah Mammoth",
-      "points": 4,
-      "gamesPlayed": 2,
-      "wins": 2,
-      "losses": 0,
-      "otLosses": 0,
-      "seasonId": 20262027,
-      "logo": "https://assets.nhle.com/logos/nhl/svg/UTA_light.svg"
     },
     {
       "abbrev": "MIN",
@@ -69,15 +69,15 @@
       "logo": "https://assets.nhle.com/logos/nhl/svg/SJS_light.svg"
     },
     {
-      "abbrev": "NYR",
-      "name": "New York Rangers",
+      "abbrev": "UTA",
+      "name": "Utah Mammoth",
       "points": 4,
       "gamesPlayed": 3,
       "wins": 2,
       "losses": 1,
       "otLosses": 0,
       "seasonId": 20262027,
-      "logo": "https://assets.nhle.com/logos/nhl/svg/NYR_light.svg"
+      "logo": "https://assets.nhle.com/logos/nhl/svg/UTA_light.svg"
     },
     {
       "abbrev": "VAN",
