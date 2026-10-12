@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-11T20:13:28.993120+00:00",
+  "updatedAt": "2026-10-12T00:30:19.195014+00:00",
   "source": "https://api-web.nhle.com/v1/standings/now",
   "teams": [
     {
@@ -67,6 +67,17 @@
       "otLosses": 0,
       "seasonId": 20262027,
       "logo": "https://assets.nhle.com/logos/nhl/svg/OTT_light.svg"
+    },
+    {
+      "abbrev": "SEA",
+      "name": "Seattle Kraken",
+      "points": 8,
+      "gamesPlayed": 6,
+      "wins": 4,
+      "losses": 2,
+      "otLosses": 0,
+      "seasonId": 20262027,
+      "logo": "https://assets.nhle.com/logos/nhl/svg/SEA_light.svg"
     },
     {
       "abbrev": "UTA",
@@ -146,17 +157,6 @@
       "logo": "https://assets.nhle.com/logos/nhl/svg/PIT_light.svg"
     },
     {
-      "abbrev": "WSH",
-      "name": "Washington Capitals",
-      "points": 6,
-      "gamesPlayed": 4,
-      "wins": 3,
-      "losses": 1,
-      "otLosses": 0,
-      "seasonId": 20262027,
-      "logo": "https://assets.nhle.com/logos/nhl/svg/WSH_secondary_light.svg"
-    },
-    {
       "abbrev": "COL",
       "name": "Colorado Avalanche",
       "points": 6,
@@ -168,15 +168,15 @@
       "logo": "https://assets.nhle.com/logos/nhl/svg/COL_light.svg"
     },
     {
-      "abbrev": "SEA",
-      "name": "Seattle Kraken",
+      "abbrev": "WSH",
+      "name": "Washington Capitals",
       "points": 6,
       "gamesPlayed": 5,
       "wins": 3,
       "losses": 2,
       "otLosses": 0,
       "seasonId": 20262027,
-      "logo": "https://assets.nhle.com/logos/nhl/svg/SEA_light.svg"
+      "logo": "https://assets.nhle.com/logos/nhl/svg/WSH_secondary_light.svg"
     },
     {
       "abbrev": "NSH",
