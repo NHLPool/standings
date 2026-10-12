@@ -1,7 +1,18 @@
 {
-  "updatedAt": "2026-10-12T00:30:19.195014+00:00",
+  "updatedAt": "2026-10-12T07:18:58.250293+00:00",
   "source": "https://api-web.nhle.com/v1/standings/now",
   "teams": [
+    {
+      "abbrev": "CAR",
+      "name": "Carolina Hurricanes",
+      "points": 11,
+      "gamesPlayed": 7,
+      "wins": 5,
+      "losses": 1,
+      "otLosses": 1,
+      "seasonId": 20262027,
+      "logo": "https://assets.nhle.com/logos/nhl/svg/CAR_light.svg"
+    },
     {
       "abbrev": "VGK",
       "name": "Vegas Golden Knights",
@@ -14,6 +25,17 @@
       "logo": "https://assets.nhle.com/logos/nhl/svg/VGK_light.svg"
     },
     {
+      "abbrev": "NYR",
+      "name": "New York Rangers",
+      "points": 10,
+      "gamesPlayed": 7,
+      "wins": 5,
+      "losses": 2,
+      "otLosses": 0,
+      "seasonId": 20262027,
+      "logo": "https://assets.nhle.com/logos/nhl/svg/NYR_light.svg"
+    },
+    {
       "abbrev": "EDM",
       "name": "Edmonton Oilers",
       "points": 9,
@@ -23,17 +45,6 @@
       "otLosses": 1,
       "seasonId": 20262027,
       "logo": "https://assets.nhle.com/logos/nhl/svg/EDM_light.svg"
-    },
-    {
-      "abbrev": "CAR",
-      "name": "Carolina Hurricanes",
-      "points": 9,
-      "gamesPlayed": 6,
-      "wins": 4,
-      "losses": 1,
-      "otLosses": 1,
-      "seasonId": 20262027,
-      "logo": "https://assets.nhle.com/logos/nhl/svg/CAR_light.svg"
     },
     {
       "abbrev": "TBL",
@@ -89,17 +100,6 @@
       "otLosses": 0,
       "seasonId": 20262027,
       "logo": "https://assets.nhle.com/logos/nhl/svg/UTA_light.svg"
-    },
-    {
-      "abbrev": "NYR",
-      "name": "New York Rangers",
-      "points": 8,
-      "gamesPlayed": 6,
-      "wins": 4,
-      "losses": 2,
-      "otLosses": 0,
-      "seasonId": 20262027,
-      "logo": "https://assets.nhle.com/logos/nhl/svg/NYR_light.svg"
     },
     {
       "abbrev": "BOS",
@@ -292,9 +292,9 @@
       "abbrev": "VAN",
       "name": "Vancouver Canucks",
       "points": 4,
-      "gamesPlayed": 6,
+      "gamesPlayed": 7,
       "wins": 2,
-      "losses": 4,
+      "losses": 5,
       "otLosses": 0,
       "seasonId": 20262027,
       "logo": "https://assets.nhle.com/logos/nhl/svg/VAN_light.svg"
@@ -336,9 +336,9 @@
       "abbrev": "PHI",
       "name": "Philadelphia Flyers",
       "points": 2,
-      "gamesPlayed": 6,
+      "gamesPlayed": 7,
       "wins": 0,
-      "losses": 4,
+      "losses": 5,
       "otLosses": 2,
       "seasonId": 20262027,
       "logo": "https://assets.nhle.com/logos/nhl/svg/PHI_light.svg"
