@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-12T17:50:19.685006+00:00",
+  "updatedAt": "2026-10-13T00:35:22.150097+00:00",
   "source": "https://api-web.nhle.com/v1/standings/now",
   "teams": [
     {
@@ -190,17 +190,6 @@
       "logo": "https://assets.nhle.com/logos/nhl/svg/NSH_light.svg"
     },
     {
-      "abbrev": "FLA",
-      "name": "Florida Panthers",
-      "points": 6,
-      "gamesPlayed": 5,
-      "wins": 2,
-      "losses": 1,
-      "otLosses": 2,
-      "seasonId": 20262027,
-      "logo": "https://assets.nhle.com/logos/nhl/svg/FLA_light.svg"
-    },
-    {
       "abbrev": "SJS",
       "name": "San Jose Sharks",
       "points": 6,
@@ -210,6 +199,28 @@
       "otLosses": 0,
       "seasonId": 20262027,
       "logo": "https://assets.nhle.com/logos/nhl/svg/SJS_light.svg"
+    },
+    {
+      "abbrev": "BUF",
+      "name": "Buffalo Sabres",
+      "points": 6,
+      "gamesPlayed": 6,
+      "wins": 3,
+      "losses": 3,
+      "otLosses": 0,
+      "seasonId": 20262027,
+      "logo": "https://assets.nhle.com/logos/nhl/svg/BUF_light.svg"
+    },
+    {
+      "abbrev": "FLA",
+      "name": "Florida Panthers",
+      "points": 6,
+      "gamesPlayed": 6,
+      "wins": 2,
+      "losses": 2,
+      "otLosses": 2,
+      "seasonId": 20262027,
+      "logo": "https://assets.nhle.com/logos/nhl/svg/FLA_light.svg"
     },
     {
       "abbrev": "DAL",
@@ -276,17 +287,6 @@
       "otLosses": 0,
       "seasonId": 20262027,
       "logo": "https://assets.nhle.com/logos/nhl/svg/NYI_light.svg"
-    },
-    {
-      "abbrev": "BUF",
-      "name": "Buffalo Sabres",
-      "points": 4,
-      "gamesPlayed": 5,
-      "wins": 2,
-      "losses": 3,
-      "otLosses": 0,
-      "seasonId": 20262027,
-      "logo": "https://assets.nhle.com/logos/nhl/svg/BUF_light.svg"
     },
     {
       "abbrev": "VAN",
