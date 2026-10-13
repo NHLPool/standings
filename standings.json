@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-13T00:35:22.150097+00:00",
+  "updatedAt": "2026-10-13T07:40:35.623152+00:00",
   "source": "https://api-web.nhle.com/v1/standings/now",
   "teams": [
     {
@@ -14,15 +14,15 @@
       "logo": "https://assets.nhle.com/logos/nhl/svg/CAR_light.svg"
     },
     {
-      "abbrev": "VGK",
-      "name": "Vegas Golden Knights",
+      "abbrev": "OTT",
+      "name": "Ottawa Senators",
       "points": 10,
       "gamesPlayed": 6,
       "wins": 5,
       "losses": 1,
       "otLosses": 0,
       "seasonId": 20262027,
-      "logo": "https://assets.nhle.com/logos/nhl/svg/VGK_light.svg"
+      "logo": "https://assets.nhle.com/logos/nhl/svg/OTT_light.svg"
     },
     {
       "abbrev": "NYR",
@@ -36,6 +36,17 @@
       "logo": "https://assets.nhle.com/logos/nhl/svg/NYR_light.svg"
     },
     {
+      "abbrev": "VGK",
+      "name": "Vegas Golden Knights",
+      "points": 10,
+      "gamesPlayed": 7,
+      "wins": 5,
+      "losses": 2,
+      "otLosses": 0,
+      "seasonId": 20262027,
+      "logo": "https://assets.nhle.com/logos/nhl/svg/VGK_light.svg"
+    },
+    {
       "abbrev": "EDM",
       "name": "Edmonton Oilers",
       "points": 9,
@@ -45,6 +56,17 @@
       "otLosses": 1,
       "seasonId": 20262027,
       "logo": "https://assets.nhle.com/logos/nhl/svg/EDM_light.svg"
+    },
+    {
+      "abbrev": "MIN",
+      "name": "Minnesota Wild",
+      "points": 9,
+      "gamesPlayed": 6,
+      "wins": 4,
+      "losses": 1,
+      "otLosses": 1,
+      "seasonId": 20262027,
+      "logo": "https://assets.nhle.com/logos/nhl/svg/MIN_light.svg"
     },
     {
       "abbrev": "TBL",
@@ -67,17 +89,6 @@
       "otLosses": 0,
       "seasonId": 20262027,
       "logo": "https://assets.nhle.com/logos/nhl/svg/ANA_light.svg"
-    },
-    {
-      "abbrev": "OTT",
-      "name": "Ottawa Senators",
-      "points": 8,
-      "gamesPlayed": 5,
-      "wins": 4,
-      "losses": 1,
-      "otLosses": 0,
-      "seasonId": 20262027,
-      "logo": "https://assets.nhle.com/logos/nhl/svg/OTT_light.svg"
     },
     {
       "abbrev": "SEA",
@@ -111,17 +122,6 @@
       "otLosses": 0,
       "seasonId": 20262027,
       "logo": "https://assets.nhle.com/logos/nhl/svg/BOS_light.svg"
-    },
-    {
-      "abbrev": "MIN",
-      "name": "Minnesota Wild",
-      "points": 7,
-      "gamesPlayed": 5,
-      "wins": 3,
-      "losses": 1,
-      "otLosses": 1,
-      "seasonId": 20262027,
-      "logo": "https://assets.nhle.com/logos/nhl/svg/MIN_light.svg"
     },
     {
       "abbrev": "WPG",
@@ -256,17 +256,6 @@
       "logo": "https://assets.nhle.com/logos/nhl/svg/MTL_light.svg"
     },
     {
-      "abbrev": "NJD",
-      "name": "New Jersey Devils",
-      "points": 4,
-      "gamesPlayed": 4,
-      "wins": 2,
-      "losses": 2,
-      "otLosses": 0,
-      "seasonId": 20262027,
-      "logo": "https://assets.nhle.com/logos/nhl/svg/NJD_light.svg"
-    },
-    {
       "abbrev": "CBJ",
       "name": "Columbus Blue Jackets",
       "points": 4,
@@ -287,6 +276,17 @@
       "otLosses": 0,
       "seasonId": 20262027,
       "logo": "https://assets.nhle.com/logos/nhl/svg/NYI_light.svg"
+    },
+    {
+      "abbrev": "NJD",
+      "name": "New Jersey Devils",
+      "points": 4,
+      "gamesPlayed": 5,
+      "wins": 2,
+      "losses": 3,
+      "otLosses": 0,
+      "seasonId": 20262027,
+      "logo": "https://assets.nhle.com/logos/nhl/svg/NJD_light.svg"
     },
     {
       "abbrev": "VAN",
