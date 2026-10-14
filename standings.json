@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-13T21:12:42.898562+00:00",
+  "updatedAt": "2026-10-14T01:11:45.532491+00:00",
   "source": "https://api-web.nhle.com/v1/standings/now",
   "teams": [
     {
@@ -124,6 +124,17 @@
       "logo": "https://assets.nhle.com/logos/nhl/svg/BOS_light.svg"
     },
     {
+      "abbrev": "FLA",
+      "name": "Florida Panthers",
+      "points": 8,
+      "gamesPlayed": 7,
+      "wins": 3,
+      "losses": 2,
+      "otLosses": 2,
+      "seasonId": 20262027,
+      "logo": "https://assets.nhle.com/logos/nhl/svg/FLA_light.svg"
+    },
+    {
       "abbrev": "WPG",
       "name": "Winnipeg Jets",
       "points": 7,
@@ -212,15 +223,15 @@
       "logo": "https://assets.nhle.com/logos/nhl/svg/BUF_light.svg"
     },
     {
-      "abbrev": "FLA",
-      "name": "Florida Panthers",
+      "abbrev": "NJD",
+      "name": "New Jersey Devils",
       "points": 6,
       "gamesPlayed": 6,
-      "wins": 2,
-      "losses": 2,
-      "otLosses": 2,
+      "wins": 3,
+      "losses": 3,
+      "otLosses": 0,
       "seasonId": 20262027,
-      "logo": "https://assets.nhle.com/logos/nhl/svg/FLA_light.svg"
+      "logo": "https://assets.nhle.com/logos/nhl/svg/NJD_light.svg"
     },
     {
       "abbrev": "DAL",
@@ -256,17 +267,6 @@
       "logo": "https://assets.nhle.com/logos/nhl/svg/MTL_light.svg"
     },
     {
-      "abbrev": "CBJ",
-      "name": "Columbus Blue Jackets",
-      "points": 4,
-      "gamesPlayed": 4,
-      "wins": 2,
-      "losses": 2,
-      "otLosses": 0,
-      "seasonId": 20262027,
-      "logo": "https://assets.nhle.com/logos/nhl/svg/CBJ_light.svg"
-    },
-    {
       "abbrev": "NYI",
       "name": "New York Islanders",
       "points": 4,
@@ -278,15 +278,26 @@
       "logo": "https://assets.nhle.com/logos/nhl/svg/NYI_light.svg"
     },
     {
-      "abbrev": "NJD",
-      "name": "New Jersey Devils",
+      "abbrev": "CBJ",
+      "name": "Columbus Blue Jackets",
       "points": 4,
       "gamesPlayed": 5,
       "wins": 2,
       "losses": 3,
       "otLosses": 0,
       "seasonId": 20262027,
-      "logo": "https://assets.nhle.com/logos/nhl/svg/NJD_light.svg"
+      "logo": "https://assets.nhle.com/logos/nhl/svg/CBJ_light.svg"
+    },
+    {
+      "abbrev": "DET",
+      "name": "Detroit Red Wings",
+      "points": 4,
+      "gamesPlayed": 6,
+      "wins": 1,
+      "losses": 3,
+      "otLosses": 2,
+      "seasonId": 20262027,
+      "logo": "https://assets.nhle.com/logos/nhl/svg/DET_light.svg"
     },
     {
       "abbrev": "VAN",
@@ -298,17 +309,6 @@
       "otLosses": 0,
       "seasonId": 20262027,
       "logo": "https://assets.nhle.com/logos/nhl/svg/VAN_light.svg"
-    },
-    {
-      "abbrev": "DET",
-      "name": "Detroit Red Wings",
-      "points": 3,
-      "gamesPlayed": 5,
-      "wins": 1,
-      "losses": 3,
-      "otLosses": 1,
-      "seasonId": 20262027,
-      "logo": "https://assets.nhle.com/logos/nhl/svg/DET_light.svg"
     },
     {
       "abbrev": "LAK",
