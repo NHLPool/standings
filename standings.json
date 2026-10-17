@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-17T04:19:29.817055+00:00",
+  "updatedAt": "2026-10-17T09:18:11.817543+00:00",
   "source": "https://api-web.nhle.com/v1/standings/now",
   "teams": [
     {
@@ -34,6 +34,17 @@
       "otLosses": 0,
       "seasonId": 20262027,
       "logo": "https://assets.nhle.com/logos/nhl/svg/UTA_light.svg"
+    },
+    {
+      "abbrev": "BOS",
+      "name": "Boston Bruins",
+      "points": 12,
+      "gamesPlayed": 8,
+      "wins": 6,
+      "losses": 2,
+      "otLosses": 0,
+      "seasonId": 20262027,
+      "logo": "https://assets.nhle.com/logos/nhl/svg/BOS_light.svg"
     },
     {
       "abbrev": "OTT",
@@ -102,17 +113,6 @@
       "logo": "https://assets.nhle.com/logos/nhl/svg/SEA_light.svg"
     },
     {
-      "abbrev": "BOS",
-      "name": "Boston Bruins",
-      "points": 10,
-      "gamesPlayed": 7,
-      "wins": 5,
-      "losses": 2,
-      "otLosses": 0,
-      "seasonId": 20262027,
-      "logo": "https://assets.nhle.com/logos/nhl/svg/BOS_light.svg"
-    },
-    {
       "abbrev": "TBL",
       "name": "Tampa Bay Lightning",
       "points": 10,
@@ -157,17 +157,6 @@
       "logo": "https://assets.nhle.com/logos/nhl/svg/BUF_light.svg"
     },
     {
-      "abbrev": "ANA",
-      "name": "Anaheim Ducks",
-      "points": 8,
-      "gamesPlayed": 6,
-      "wins": 4,
-      "losses": 2,
-      "otLosses": 0,
-      "seasonId": 20262027,
-      "logo": "https://assets.nhle.com/logos/nhl/svg/ANA_light.svg"
-    },
-    {
       "abbrev": "WSH",
       "name": "Washington Capitals",
       "points": 8,
@@ -177,6 +166,17 @@
       "otLosses": 0,
       "seasonId": 20262027,
       "logo": "https://assets.nhle.com/logos/nhl/svg/WSH_secondary_light.svg"
+    },
+    {
+      "abbrev": "ANA",
+      "name": "Anaheim Ducks",
+      "points": 8,
+      "gamesPlayed": 7,
+      "wins": 4,
+      "losses": 3,
+      "otLosses": 0,
+      "seasonId": 20262027,
+      "logo": "https://assets.nhle.com/logos/nhl/svg/ANA_light.svg"
     },
     {
       "abbrev": "NJD",
