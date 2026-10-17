@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-17T19:21:39.801062+00:00",
+  "updatedAt": "2026-10-17T22:15:14.899510+00:00",
   "source": "https://api-web.nhle.com/v1/standings/now",
   "teams": [
     {
@@ -135,6 +135,17 @@
       "logo": "https://assets.nhle.com/logos/nhl/svg/WPG_light.svg"
     },
     {
+      "abbrev": "WSH",
+      "name": "Washington Capitals",
+      "points": 10,
+      "gamesPlayed": 8,
+      "wins": 5,
+      "losses": 3,
+      "otLosses": 0,
+      "seasonId": 20262027,
+      "logo": "https://assets.nhle.com/logos/nhl/svg/WSH_secondary_light.svg"
+    },
+    {
       "abbrev": "FLA",
       "name": "Florida Panthers",
       "points": 10,
@@ -157,17 +168,6 @@
       "logo": "https://assets.nhle.com/logos/nhl/svg/BUF_light.svg"
     },
     {
-      "abbrev": "WSH",
-      "name": "Washington Capitals",
-      "points": 8,
-      "gamesPlayed": 7,
-      "wins": 4,
-      "losses": 3,
-      "otLosses": 0,
-      "seasonId": 20262027,
-      "logo": "https://assets.nhle.com/logos/nhl/svg/WSH_secondary_light.svg"
-    },
-    {
       "abbrev": "ANA",
       "name": "Anaheim Ducks",
       "points": 8,
@@ -179,17 +179,6 @@
       "logo": "https://assets.nhle.com/logos/nhl/svg/ANA_light.svg"
     },
     {
-      "abbrev": "NJD",
-      "name": "New Jersey Devils",
-      "points": 8,
-      "gamesPlayed": 7,
-      "wins": 4,
-      "losses": 3,
-      "otLosses": 0,
-      "seasonId": 20262027,
-      "logo": "https://assets.nhle.com/logos/nhl/svg/NJD_light.svg"
-    },
-    {
       "abbrev": "SJS",
       "name": "San Jose Sharks",
       "points": 8,
@@ -199,6 +188,17 @@
       "otLosses": 0,
       "seasonId": 20262027,
       "logo": "https://assets.nhle.com/logos/nhl/svg/SJS_light.svg"
+    },
+    {
+      "abbrev": "NJD",
+      "name": "New Jersey Devils",
+      "points": 8,
+      "gamesPlayed": 8,
+      "wins": 4,
+      "losses": 4,
+      "otLosses": 0,
+      "seasonId": 20262027,
+      "logo": "https://assets.nhle.com/logos/nhl/svg/NJD_light.svg"
     },
     {
       "abbrev": "TOR",
