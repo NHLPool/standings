@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-18T23:07:35.530728+00:00",
+  "updatedAt": "2026-10-19T01:14:30.180466+00:00",
   "source": "https://api-web.nhle.com/v1/standings/now",
   "teams": [
     {
@@ -45,6 +45,17 @@
       "otLosses": 1,
       "seasonId": 20262027,
       "logo": "https://assets.nhle.com/logos/nhl/svg/EDM_light.svg"
+    },
+    {
+      "abbrev": "MIN",
+      "name": "Minnesota Wild",
+      "points": 13,
+      "gamesPlayed": 9,
+      "wins": 6,
+      "losses": 2,
+      "otLosses": 1,
+      "seasonId": 20262027,
+      "logo": "https://assets.nhle.com/logos/nhl/svg/MIN_light.svg"
     },
     {
       "abbrev": "NYR",
@@ -111,17 +122,6 @@
       "otLosses": 1,
       "seasonId": 20262027,
       "logo": "https://assets.nhle.com/logos/nhl/svg/COL_light.svg"
-    },
-    {
-      "abbrev": "MIN",
-      "name": "Minnesota Wild",
-      "points": 11,
-      "gamesPlayed": 8,
-      "wins": 5,
-      "losses": 2,
-      "otLosses": 1,
-      "seasonId": 20262027,
-      "logo": "https://assets.nhle.com/logos/nhl/svg/MIN_light.svg"
     },
     {
       "abbrev": "SEA",
@@ -292,9 +292,9 @@
       "abbrev": "CBJ",
       "name": "Columbus Blue Jackets",
       "points": 6,
-      "gamesPlayed": 6,
+      "gamesPlayed": 7,
       "wins": 3,
-      "losses": 3,
+      "losses": 4,
       "otLosses": 0,
       "seasonId": 20262027,
       "logo": "https://assets.nhle.com/logos/nhl/svg/CBJ_light.svg"
