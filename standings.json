@@ -1,14 +1,25 @@
 {
-  "updatedAt": "2026-10-21T04:39:47.617445+00:00",
+  "updatedAt": "2026-10-21T10:04:54.760706+00:00",
   "source": "https://api-web.nhle.com/v1/standings/now",
   "teams": [
+    {
+      "abbrev": "CAR",
+      "name": "Carolina Hurricanes",
+      "points": 17,
+      "gamesPlayed": 11,
+      "wins": 8,
+      "losses": 2,
+      "otLosses": 1,
+      "seasonId": 20262027,
+      "logo": "https://assets.nhle.com/logos/nhl/svg/CAR_light.svg"
+    },
     {
       "abbrev": "VGK",
       "name": "Vegas Golden Knights",
       "points": 16,
-      "gamesPlayed": 10,
+      "gamesPlayed": 11,
       "wins": 8,
-      "losses": 2,
+      "losses": 3,
       "otLosses": 0,
       "seasonId": 20262027,
       "logo": "https://assets.nhle.com/logos/nhl/svg/VGK_light.svg"
@@ -36,17 +47,6 @@
       "logo": "https://assets.nhle.com/logos/nhl/svg/BOS_light.svg"
     },
     {
-      "abbrev": "CAR",
-      "name": "Carolina Hurricanes",
-      "points": 15,
-      "gamesPlayed": 10,
-      "wins": 7,
-      "losses": 2,
-      "otLosses": 1,
-      "seasonId": 20262027,
-      "logo": "https://assets.nhle.com/logos/nhl/svg/CAR_light.svg"
-    },
-    {
       "abbrev": "NYR",
       "name": "New York Rangers",
       "points": 15,
@@ -56,6 +56,17 @@
       "otLosses": 1,
       "seasonId": 20262027,
       "logo": "https://assets.nhle.com/logos/nhl/svg/NYR_light.svg"
+    },
+    {
+      "abbrev": "TBL",
+      "name": "Tampa Bay Lightning",
+      "points": 14,
+      "gamesPlayed": 9,
+      "wins": 7,
+      "losses": 2,
+      "otLosses": 0,
+      "seasonId": 20262027,
+      "logo": "https://assets.nhle.com/logos/nhl/svg/TBL_light.svg"
     },
     {
       "abbrev": "UTA",
@@ -89,17 +100,6 @@
       "otLosses": 1,
       "seasonId": 20262027,
       "logo": "https://assets.nhle.com/logos/nhl/svg/SEA_light.svg"
-    },
-    {
-      "abbrev": "TBL",
-      "name": "Tampa Bay Lightning",
-      "points": 12,
-      "gamesPlayed": 8,
-      "wins": 6,
-      "losses": 2,
-      "otLosses": 0,
-      "seasonId": 20262027,
-      "logo": "https://assets.nhle.com/logos/nhl/svg/TBL_light.svg"
     },
     {
       "abbrev": "OTT",
@@ -325,9 +325,9 @@
       "abbrev": "VAN",
       "name": "Vancouver Canucks",
       "points": 5,
-      "gamesPlayed": 10,
+      "gamesPlayed": 11,
       "wins": 2,
-      "losses": 7,
+      "losses": 8,
       "otLosses": 1,
       "seasonId": 20262027,
       "logo": "https://assets.nhle.com/logos/nhl/svg/VAN_light.svg"
