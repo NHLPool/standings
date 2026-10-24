@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-24T01:33:17.848097+00:00",
+  "updatedAt": "2026-10-24T07:14:56.984514+00:00",
   "source": "https://api-web.nhle.com/v1/standings/now",
   "teams": [
     {
@@ -72,9 +72,9 @@
       "abbrev": "TBL",
       "name": "Tampa Bay Lightning",
       "points": 14,
-      "gamesPlayed": 9,
+      "gamesPlayed": 10,
       "wins": 7,
-      "losses": 2,
+      "losses": 3,
       "otLosses": 0,
       "seasonId": 20262027,
       "logo": "https://assets.nhle.com/logos/nhl/svg/TBL_light.svg"
@@ -135,6 +135,17 @@
       "logo": "https://assets.nhle.com/logos/nhl/svg/DAL_light.svg"
     },
     {
+      "abbrev": "COL",
+      "name": "Colorado Avalanche",
+      "points": 13,
+      "gamesPlayed": 11,
+      "wins": 6,
+      "losses": 4,
+      "otLosses": 1,
+      "seasonId": 20262027,
+      "logo": "https://assets.nhle.com/logos/nhl/svg/COL_light.svg"
+    },
+    {
       "abbrev": "SJS",
       "name": "San Jose Sharks",
       "points": 13,
@@ -168,6 +179,17 @@
       "logo": "https://assets.nhle.com/logos/nhl/svg/NJD_light.svg"
     },
     {
+      "abbrev": "MTL",
+      "name": "Montr\u00e9al Canadiens",
+      "points": 12,
+      "gamesPlayed": 10,
+      "wins": 5,
+      "losses": 3,
+      "otLosses": 2,
+      "seasonId": 20262027,
+      "logo": "https://assets.nhle.com/logos/nhl/svg/MTL_light.svg"
+    },
+    {
       "abbrev": "FLA",
       "name": "Florida Panthers",
       "points": 12,
@@ -177,17 +199,6 @@
       "otLosses": 2,
       "seasonId": 20262027,
       "logo": "https://assets.nhle.com/logos/nhl/svg/FLA_light.svg"
-    },
-    {
-      "abbrev": "COL",
-      "name": "Colorado Avalanche",
-      "points": 11,
-      "gamesPlayed": 10,
-      "wins": 5,
-      "losses": 4,
-      "otLosses": 1,
-      "seasonId": 20262027,
-      "logo": "https://assets.nhle.com/logos/nhl/svg/COL_light.svg"
     },
     {
       "abbrev": "STL",
@@ -232,17 +243,6 @@
       "otLosses": 0,
       "seasonId": 20262027,
       "logo": "https://assets.nhle.com/logos/nhl/svg/WSH_secondary_light.svg"
-    },
-    {
-      "abbrev": "MTL",
-      "name": "Montr\u00e9al Canadiens",
-      "points": 10,
-      "gamesPlayed": 9,
-      "wins": 4,
-      "losses": 3,
-      "otLosses": 2,
-      "seasonId": 20262027,
-      "logo": "https://assets.nhle.com/logos/nhl/svg/MTL_light.svg"
     },
     {
       "abbrev": "BUF",
@@ -336,9 +336,9 @@
       "abbrev": "CHI",
       "name": "Chicago Blackhawks",
       "points": 6,
-      "gamesPlayed": 9,
+      "gamesPlayed": 10,
       "wins": 3,
-      "losses": 6,
+      "losses": 7,
       "otLosses": 0,
       "seasonId": 20262027,
       "logo": "https://assets.nhle.com/logos/nhl/svg/CHI_light.svg"
