@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-25T21:43:24.036168+00:00",
+  "updatedAt": "2026-10-26T00:18:05.292983+00:00",
   "source": "https://api-web.nhle.com/v1/standings/now",
   "teams": [
     {
@@ -135,6 +135,17 @@
       "logo": "https://assets.nhle.com/logos/nhl/svg/NJD_light.svg"
     },
     {
+      "abbrev": "FLA",
+      "name": "Florida Panthers",
+      "points": 14,
+      "gamesPlayed": 12,
+      "wins": 6,
+      "losses": 4,
+      "otLosses": 2,
+      "seasonId": 20262027,
+      "logo": "https://assets.nhle.com/logos/nhl/svg/FLA_light.svg"
+    },
+    {
       "abbrev": "DAL",
       "name": "Dallas Stars",
       "points": 13,
@@ -199,17 +210,6 @@
       "otLosses": 2,
       "seasonId": 20262027,
       "logo": "https://assets.nhle.com/logos/nhl/svg/MTL_light.svg"
-    },
-    {
-      "abbrev": "FLA",
-      "name": "Florida Panthers",
-      "points": 12,
-      "gamesPlayed": 11,
-      "wins": 5,
-      "losses": 4,
-      "otLosses": 2,
-      "seasonId": 20262027,
-      "logo": "https://assets.nhle.com/logos/nhl/svg/FLA_light.svg"
     },
     {
       "abbrev": "WPG",
@@ -336,9 +336,9 @@
       "abbrev": "CHI",
       "name": "Chicago Blackhawks",
       "points": 6,
-      "gamesPlayed": 10,
+      "gamesPlayed": 11,
       "wins": 3,
-      "losses": 7,
+      "losses": 8,
       "otLosses": 0,
       "seasonId": 20262027,
       "logo": "https://assets.nhle.com/logos/nhl/svg/CHI_light.svg"
