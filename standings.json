@@ -1,17 +1,28 @@
 {
-  "updatedAt": "2026-11-01T19:37:40.733406+00:00",
+  "updatedAt": "2026-11-01T23:33:21.117607+00:00",
   "source": "https://api-web.nhle.com/v1/standings/now",
   "teams": [
     {
       "abbrev": "CAR",
       "name": "Carolina Hurricanes",
-      "points": 24,
-      "gamesPlayed": 15,
-      "wins": 11,
+      "points": 26,
+      "gamesPlayed": 16,
+      "wins": 12,
       "losses": 2,
       "otLosses": 2,
       "seasonId": 20262027,
       "logo": "https://assets.nhle.com/logos/nhl/svg/CAR_light.svg"
+    },
+    {
+      "abbrev": "MIN",
+      "name": "Minnesota Wild",
+      "points": 23,
+      "gamesPlayed": 16,
+      "wins": 10,
+      "losses": 3,
+      "otLosses": 3,
+      "seasonId": 20262027,
+      "logo": "https://assets.nhle.com/logos/nhl/svg/MIN_light.svg"
     },
     {
       "abbrev": "EDM",
@@ -23,17 +34,6 @@
       "otLosses": 2,
       "seasonId": 20262027,
       "logo": "https://assets.nhle.com/logos/nhl/svg/EDM_light.svg"
-    },
-    {
-      "abbrev": "MIN",
-      "name": "Minnesota Wild",
-      "points": 21,
-      "gamesPlayed": 15,
-      "wins": 9,
-      "losses": 3,
-      "otLosses": 3,
-      "seasonId": 20262027,
-      "logo": "https://assets.nhle.com/logos/nhl/svg/MIN_light.svg"
     },
     {
       "abbrev": "BOS",
@@ -182,9 +182,9 @@
       "abbrev": "WSH",
       "name": "Washington Capitals",
       "points": 16,
-      "gamesPlayed": 12,
+      "gamesPlayed": 13,
       "wins": 8,
-      "losses": 4,
+      "losses": 5,
       "otLosses": 0,
       "seasonId": 20262027,
       "logo": "https://assets.nhle.com/logos/nhl/svg/WSH_secondary_light.svg"
@@ -292,9 +292,9 @@
       "abbrev": "WPG",
       "name": "Winnipeg Jets",
       "points": 11,
-      "gamesPlayed": 14,
+      "gamesPlayed": 15,
       "wins": 4,
-      "losses": 7,
+      "losses": 8,
       "otLosses": 3,
       "seasonId": 20262027,
       "logo": "https://assets.nhle.com/logos/nhl/svg/WPG_light.svg"
