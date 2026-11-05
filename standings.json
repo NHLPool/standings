@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-05T03:28:22.616165+00:00",
+  "updatedAt": "2026-11-05T12:15:15.926170+00:00",
   "source": "https://api-web.nhle.com/v1/standings/now",
   "teams": [
     {
@@ -135,6 +135,17 @@
       "logo": "https://assets.nhle.com/logos/nhl/svg/DAL_light.svg"
     },
     {
+      "abbrev": "SEA",
+      "name": "Seattle Kraken",
+      "points": 19,
+      "gamesPlayed": 15,
+      "wins": 9,
+      "losses": 5,
+      "otLosses": 1,
+      "seasonId": 20262027,
+      "logo": "https://assets.nhle.com/logos/nhl/svg/SEA_light.svg"
+    },
+    {
       "abbrev": "COL",
       "name": "Colorado Avalanche",
       "points": 19,
@@ -155,17 +166,6 @@
       "otLosses": 2,
       "seasonId": 20262027,
       "logo": "https://assets.nhle.com/logos/nhl/svg/TOR_light.svg"
-    },
-    {
-      "abbrev": "SEA",
-      "name": "Seattle Kraken",
-      "points": 17,
-      "gamesPlayed": 14,
-      "wins": 8,
-      "losses": 5,
-      "otLosses": 1,
-      "seasonId": 20262027,
-      "logo": "https://assets.nhle.com/logos/nhl/svg/SEA_light.svg"
     },
     {
       "abbrev": "BUF",
@@ -256,26 +256,26 @@
       "logo": "https://assets.nhle.com/logos/nhl/svg/ANA_light.svg"
     },
     {
-      "abbrev": "SJS",
-      "name": "San Jose Sharks",
+      "abbrev": "CGY",
+      "name": "Calgary Flames",
       "points": 15,
       "gamesPlayed": 16,
       "wins": 7,
       "losses": 8,
       "otLosses": 1,
       "seasonId": 20262027,
-      "logo": "https://assets.nhle.com/logos/nhl/svg/SJS_light.svg"
+      "logo": "https://assets.nhle.com/logos/nhl/svg/CGY_light.svg"
     },
     {
-      "abbrev": "CGY",
-      "name": "Calgary Flames",
-      "points": 14,
-      "gamesPlayed": 15,
+      "abbrev": "SJS",
+      "name": "San Jose Sharks",
+      "points": 15,
+      "gamesPlayed": 17,
       "wins": 7,
-      "losses": 8,
-      "otLosses": 0,
+      "losses": 9,
+      "otLosses": 1,
       "seasonId": 20262027,
-      "logo": "https://assets.nhle.com/logos/nhl/svg/CGY_light.svg"
+      "logo": "https://assets.nhle.com/logos/nhl/svg/SJS_light.svg"
     },
     {
       "abbrev": "WPG",
@@ -300,6 +300,17 @@
       "logo": "https://assets.nhle.com/logos/nhl/svg/CBJ_light.svg"
     },
     {
+      "abbrev": "LAK",
+      "name": "Los Angeles Kings",
+      "points": 12,
+      "gamesPlayed": 14,
+      "wins": 5,
+      "losses": 7,
+      "otLosses": 2,
+      "seasonId": 20262027,
+      "logo": "https://assets.nhle.com/logos/nhl/svg/LAK_light.svg"
+    },
+    {
       "abbrev": "PIT",
       "name": "Pittsburgh Penguins",
       "points": 12,
@@ -320,17 +331,6 @@
       "otLosses": 4,
       "seasonId": 20262027,
       "logo": "https://assets.nhle.com/logos/nhl/svg/PHI_light.svg"
-    },
-    {
-      "abbrev": "LAK",
-      "name": "Los Angeles Kings",
-      "points": 10,
-      "gamesPlayed": 13,
-      "wins": 4,
-      "losses": 7,
-      "otLosses": 2,
-      "seasonId": 20262027,
-      "logo": "https://assets.nhle.com/logos/nhl/svg/LAK_light.svg"
     },
     {
       "abbrev": "CHI",
