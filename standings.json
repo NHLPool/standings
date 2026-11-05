@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-04T22:38:18.003789+00:00",
+  "updatedAt": "2026-11-05T03:28:22.616165+00:00",
   "source": "https://api-web.nhle.com/v1/standings/now",
   "teams": [
     {
@@ -69,6 +69,17 @@
       "logo": "https://assets.nhle.com/logos/nhl/svg/MTL_light.svg"
     },
     {
+      "abbrev": "OTT",
+      "name": "Ottawa Senators",
+      "points": 21,
+      "gamesPlayed": 17,
+      "wins": 10,
+      "losses": 6,
+      "otLosses": 1,
+      "seasonId": 20262027,
+      "logo": "https://assets.nhle.com/logos/nhl/svg/OTT_light.svg"
+    },
+    {
       "abbrev": "TBL",
       "name": "Tampa Bay Lightning",
       "points": 20,
@@ -102,6 +113,17 @@
       "logo": "https://assets.nhle.com/logos/nhl/svg/UTA_light.svg"
     },
     {
+      "abbrev": "FLA",
+      "name": "Florida Panthers",
+      "points": 20,
+      "gamesPlayed": 16,
+      "wins": 9,
+      "losses": 5,
+      "otLosses": 2,
+      "seasonId": 20262027,
+      "logo": "https://assets.nhle.com/logos/nhl/svg/FLA_light.svg"
+    },
+    {
       "abbrev": "DAL",
       "name": "Dallas Stars",
       "points": 19,
@@ -122,28 +144,6 @@
       "otLosses": 1,
       "seasonId": 20262027,
       "logo": "https://assets.nhle.com/logos/nhl/svg/COL_light.svg"
-    },
-    {
-      "abbrev": "OTT",
-      "name": "Ottawa Senators",
-      "points": 19,
-      "gamesPlayed": 16,
-      "wins": 9,
-      "losses": 6,
-      "otLosses": 1,
-      "seasonId": 20262027,
-      "logo": "https://assets.nhle.com/logos/nhl/svg/OTT_light.svg"
-    },
-    {
-      "abbrev": "FLA",
-      "name": "Florida Panthers",
-      "points": 18,
-      "gamesPlayed": 15,
-      "wins": 8,
-      "losses": 5,
-      "otLosses": 2,
-      "seasonId": 20262027,
-      "logo": "https://assets.nhle.com/logos/nhl/svg/FLA_light.svg"
     },
     {
       "abbrev": "TOR",
@@ -171,9 +171,9 @@
       "abbrev": "BUF",
       "name": "Buffalo Sabres",
       "points": 17,
-      "gamesPlayed": 14,
+      "gamesPlayed": 15,
       "wins": 7,
-      "losses": 4,
+      "losses": 5,
       "otLosses": 3,
       "seasonId": 20262027,
       "logo": "https://assets.nhle.com/logos/nhl/svg/BUF_light.svg"
@@ -336,9 +336,9 @@
       "abbrev": "CHI",
       "name": "Chicago Blackhawks",
       "points": 9,
-      "gamesPlayed": 15,
+      "gamesPlayed": 16,
       "wins": 4,
-      "losses": 10,
+      "losses": 11,
       "otLosses": 1,
       "seasonId": 20262027,
       "logo": "https://assets.nhle.com/logos/nhl/svg/CHI_light.svg"
