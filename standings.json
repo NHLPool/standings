@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-07T16:23:52.237075+00:00",
+  "updatedAt": "2026-11-07T20:51:06.530941+00:00",
   "source": "https://api-web.nhle.com/v1/standings/now",
   "teams": [
     {
@@ -113,15 +113,15 @@
       "logo": "https://assets.nhle.com/logos/nhl/svg/OTT_light.svg"
     },
     {
-      "abbrev": "FLA",
-      "name": "Florida Panthers",
-      "points": 20,
-      "gamesPlayed": 16,
-      "wins": 9,
-      "losses": 5,
-      "otLosses": 2,
+      "abbrev": "NSH",
+      "name": "Nashville Predators",
+      "points": 21,
+      "gamesPlayed": 17,
+      "wins": 8,
+      "losses": 4,
+      "otLosses": 5,
       "seasonId": 20262027,
-      "logo": "https://assets.nhle.com/logos/nhl/svg/FLA_light.svg"
+      "logo": "https://assets.nhle.com/logos/nhl/svg/NSH_light.svg"
     },
     {
       "abbrev": "DAL",
@@ -146,6 +146,17 @@
       "logo": "https://assets.nhle.com/logos/nhl/svg/COL_light.svg"
     },
     {
+      "abbrev": "FLA",
+      "name": "Florida Panthers",
+      "points": 20,
+      "gamesPlayed": 17,
+      "wins": 9,
+      "losses": 6,
+      "otLosses": 2,
+      "seasonId": 20262027,
+      "logo": "https://assets.nhle.com/logos/nhl/svg/FLA_light.svg"
+    },
+    {
       "abbrev": "SEA",
       "name": "Seattle Kraken",
       "points": 19,
@@ -166,17 +177,6 @@
       "otLosses": 3,
       "seasonId": 20262027,
       "logo": "https://assets.nhle.com/logos/nhl/svg/BUF_light.svg"
-    },
-    {
-      "abbrev": "NSH",
-      "name": "Nashville Predators",
-      "points": 19,
-      "gamesPlayed": 16,
-      "wins": 7,
-      "losses": 4,
-      "otLosses": 5,
-      "seasonId": 20262027,
-      "logo": "https://assets.nhle.com/logos/nhl/svg/NSH_light.svg"
     },
     {
       "abbrev": "NYR",
@@ -201,6 +201,17 @@
       "logo": "https://assets.nhle.com/logos/nhl/svg/ANA_light.svg"
     },
     {
+      "abbrev": "WSH",
+      "name": "Washington Capitals",
+      "points": 18,
+      "gamesPlayed": 15,
+      "wins": 9,
+      "losses": 6,
+      "otLosses": 0,
+      "seasonId": 20262027,
+      "logo": "https://assets.nhle.com/logos/nhl/svg/WSH_secondary_light.svg"
+    },
+    {
       "abbrev": "TOR",
       "name": "Toronto Maple Leafs",
       "points": 18,
@@ -223,17 +234,6 @@
       "logo": "https://assets.nhle.com/logos/nhl/svg/DET_light.svg"
     },
     {
-      "abbrev": "WSH",
-      "name": "Washington Capitals",
-      "points": 16,
-      "gamesPlayed": 14,
-      "wins": 8,
-      "losses": 6,
-      "otLosses": 0,
-      "seasonId": 20262027,
-      "logo": "https://assets.nhle.com/logos/nhl/svg/WSH_secondary_light.svg"
-    },
-    {
       "abbrev": "NYI",
       "name": "New York Islanders",
       "points": 16,
@@ -248,9 +248,9 @@
       "abbrev": "STL",
       "name": "St. Louis Blues",
       "points": 16,
-      "gamesPlayed": 16,
+      "gamesPlayed": 17,
       "wins": 7,
-      "losses": 7,
+      "losses": 8,
       "otLosses": 2,
       "seasonId": 20262027,
       "logo": "https://assets.nhle.com/logos/nhl/svg/STL_light.svg"
