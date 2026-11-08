@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-08T19:39:58.917111+00:00",
+  "updatedAt": "2026-11-08T23:40:40.294497+00:00",
   "source": "https://api-web.nhle.com/v1/standings/now",
   "teams": [
     {
@@ -25,6 +25,17 @@
       "logo": "https://assets.nhle.com/logos/nhl/svg/MIN_light.svg"
     },
     {
+      "abbrev": "BOS",
+      "name": "Boston Bruins",
+      "points": 27,
+      "gamesPlayed": 18,
+      "wins": 13,
+      "losses": 4,
+      "otLosses": 1,
+      "seasonId": 20262027,
+      "logo": "https://assets.nhle.com/logos/nhl/svg/BOS_light.svg"
+    },
+    {
       "abbrev": "EDM",
       "name": "Edmonton Oilers",
       "points": 27,
@@ -36,15 +47,15 @@
       "logo": "https://assets.nhle.com/logos/nhl/svg/EDM_light.svg"
     },
     {
-      "abbrev": "BOS",
-      "name": "Boston Bruins",
-      "points": 25,
-      "gamesPlayed": 17,
+      "abbrev": "VGK",
+      "name": "Vegas Golden Knights",
+      "points": 26,
+      "gamesPlayed": 19,
       "wins": 12,
-      "losses": 4,
-      "otLosses": 1,
+      "losses": 5,
+      "otLosses": 2,
       "seasonId": 20262027,
-      "logo": "https://assets.nhle.com/logos/nhl/svg/BOS_light.svg"
+      "logo": "https://assets.nhle.com/logos/nhl/svg/VGK_light.svg"
     },
     {
       "abbrev": "MTL",
@@ -78,17 +89,6 @@
       "otLosses": 0,
       "seasonId": 20262027,
       "logo": "https://assets.nhle.com/logos/nhl/svg/NJD_light.svg"
-    },
-    {
-      "abbrev": "VGK",
-      "name": "Vegas Golden Knights",
-      "points": 24,
-      "gamesPlayed": 18,
-      "wins": 11,
-      "losses": 5,
-      "otLosses": 2,
-      "seasonId": 20262027,
-      "logo": "https://assets.nhle.com/logos/nhl/svg/VGK_light.svg"
     },
     {
       "abbrev": "OTT",
@@ -160,23 +160,12 @@
       "abbrev": "FLA",
       "name": "Florida Panthers",
       "points": 20,
-      "gamesPlayed": 17,
+      "gamesPlayed": 18,
       "wins": 9,
-      "losses": 6,
+      "losses": 7,
       "otLosses": 2,
       "seasonId": 20262027,
       "logo": "https://assets.nhle.com/logos/nhl/svg/FLA_light.svg"
-    },
-    {
-      "abbrev": "BUF",
-      "name": "Buffalo Sabres",
-      "points": 19,
-      "gamesPlayed": 16,
-      "wins": 8,
-      "losses": 5,
-      "otLosses": 3,
-      "seasonId": 20262027,
-      "logo": "https://assets.nhle.com/logos/nhl/svg/BUF_light.svg"
     },
     {
       "abbrev": "SEA",
@@ -199,6 +188,17 @@
       "otLosses": 1,
       "seasonId": 20262027,
       "logo": "https://assets.nhle.com/logos/nhl/svg/ANA_light.svg"
+    },
+    {
+      "abbrev": "BUF",
+      "name": "Buffalo Sabres",
+      "points": 19,
+      "gamesPlayed": 17,
+      "wins": 8,
+      "losses": 6,
+      "otLosses": 3,
+      "seasonId": 20262027,
+      "logo": "https://assets.nhle.com/logos/nhl/svg/BUF_light.svg"
     },
     {
       "abbrev": "WSH",
