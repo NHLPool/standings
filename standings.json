@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-11T21:53:42.915893+00:00",
+  "updatedAt": "2026-11-12T02:55:59.459905+00:00",
   "source": "https://api-web.nhle.com/v1/standings/now",
   "teams": [
     {
@@ -47,6 +47,17 @@
       "logo": "https://assets.nhle.com/logos/nhl/svg/BOS_light.svg"
     },
     {
+      "abbrev": "TBL",
+      "name": "Tampa Bay Lightning",
+      "points": 26,
+      "gamesPlayed": 18,
+      "wins": 12,
+      "losses": 4,
+      "otLosses": 2,
+      "seasonId": 20262027,
+      "logo": "https://assets.nhle.com/logos/nhl/svg/TBL_light.svg"
+    },
+    {
       "abbrev": "MTL",
       "name": "Montr\u00e9al Canadiens",
       "points": 26,
@@ -78,17 +89,6 @@
       "otLosses": 0,
       "seasonId": 20262027,
       "logo": "https://assets.nhle.com/logos/nhl/svg/NJD_light.svg"
-    },
-    {
-      "abbrev": "TBL",
-      "name": "Tampa Bay Lightning",
-      "points": 24,
-      "gamesPlayed": 17,
-      "wins": 11,
-      "losses": 4,
-      "otLosses": 2,
-      "seasonId": 20262027,
-      "logo": "https://assets.nhle.com/logos/nhl/svg/TBL_light.svg"
     },
     {
       "abbrev": "COL",
@@ -204,9 +204,9 @@
       "abbrev": "BUF",
       "name": "Buffalo Sabres",
       "points": 19,
-      "gamesPlayed": 17,
+      "gamesPlayed": 18,
       "wins": 8,
-      "losses": 6,
+      "losses": 7,
       "otLosses": 3,
       "seasonId": 20262027,
       "logo": "https://assets.nhle.com/logos/nhl/svg/BUF_light.svg"
