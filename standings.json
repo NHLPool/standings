@@ -1,7 +1,18 @@
 {
-  "updatedAt": "2026-11-12T18:52:15.243408+00:00",
+  "updatedAt": "2026-11-13T00:16:55.572933+00:00",
   "source": "https://api-web.nhle.com/v1/standings/now",
   "teams": [
+    {
+      "abbrev": "CAR",
+      "name": "Carolina Hurricanes",
+      "points": 32,
+      "gamesPlayed": 20,
+      "wins": 15,
+      "losses": 3,
+      "otLosses": 2,
+      "seasonId": 20262027,
+      "logo": "https://assets.nhle.com/logos/nhl/svg/CAR_light.svg"
+    },
     {
       "abbrev": "EDM",
       "name": "Edmonton Oilers",
@@ -12,17 +23,6 @@
       "otLosses": 3,
       "seasonId": 20262027,
       "logo": "https://assets.nhle.com/logos/nhl/svg/EDM_light.svg"
-    },
-    {
-      "abbrev": "CAR",
-      "name": "Carolina Hurricanes",
-      "points": 30,
-      "gamesPlayed": 19,
-      "wins": 14,
-      "losses": 3,
-      "otLosses": 2,
-      "seasonId": 20262027,
-      "logo": "https://assets.nhle.com/logos/nhl/svg/CAR_light.svg"
     },
     {
       "abbrev": "MIN",
@@ -193,9 +193,9 @@
       "abbrev": "SEA",
       "name": "Seattle Kraken",
       "points": 19,
-      "gamesPlayed": 16,
+      "gamesPlayed": 17,
       "wins": 9,
-      "losses": 6,
+      "losses": 7,
       "otLosses": 1,
       "seasonId": 20262027,
       "logo": "https://assets.nhle.com/logos/nhl/svg/SEA_light.svg"
