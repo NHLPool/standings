@@ -1,13 +1,13 @@
 {
-  "updatedAt": "2026-11-14T17:01:43.373946+00:00",
+  "updatedAt": "2026-11-14T21:25:48.959774+00:00",
   "source": "https://api-web.nhle.com/v1/standings/now",
   "teams": [
     {
       "abbrev": "CAR",
       "name": "Carolina Hurricanes",
-      "points": 32,
-      "gamesPlayed": 20,
-      "wins": 15,
+      "points": 34,
+      "gamesPlayed": 21,
+      "wins": 16,
       "losses": 3,
       "otLosses": 2,
       "seasonId": 20262027,
@@ -237,9 +237,9 @@
       "abbrev": "SEA",
       "name": "Seattle Kraken",
       "points": 19,
-      "gamesPlayed": 17,
+      "gamesPlayed": 18,
       "wins": 9,
-      "losses": 7,
+      "losses": 8,
       "otLosses": 1,
       "seasonId": 20262027,
       "logo": "https://assets.nhle.com/logos/nhl/svg/SEA_light.svg"
