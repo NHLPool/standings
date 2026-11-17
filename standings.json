@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-17T03:47:03.699477+00:00",
+  "updatedAt": "2026-11-17T13:15:48.911204+00:00",
   "source": "https://api-web.nhle.com/v1/standings/now",
   "teams": [
     {
@@ -168,17 +168,6 @@
       "logo": "https://assets.nhle.com/logos/nhl/svg/ANA_light.svg"
     },
     {
-      "abbrev": "UTA",
-      "name": "Utah Mammoth",
-      "points": 23,
-      "gamesPlayed": 21,
-      "wins": 10,
-      "losses": 8,
-      "otLosses": 3,
-      "seasonId": 20262027,
-      "logo": "https://assets.nhle.com/logos/nhl/svg/UTA_light.svg"
-    },
-    {
       "abbrev": "WPG",
       "name": "Winnipeg Jets",
       "points": 23,
@@ -188,6 +177,17 @@
       "otLosses": 3,
       "seasonId": 20262027,
       "logo": "https://assets.nhle.com/logos/nhl/svg/WPG_light.svg"
+    },
+    {
+      "abbrev": "UTA",
+      "name": "Utah Mammoth",
+      "points": 23,
+      "gamesPlayed": 22,
+      "wins": 10,
+      "losses": 9,
+      "otLosses": 3,
+      "seasonId": 20262027,
+      "logo": "https://assets.nhle.com/logos/nhl/svg/UTA_light.svg"
     },
     {
       "abbrev": "NYI",
@@ -346,9 +346,9 @@
     {
       "abbrev": "VAN",
       "name": "Vancouver Canucks",
-      "points": 9,
-      "gamesPlayed": 22,
-      "wins": 4,
+      "points": 11,
+      "gamesPlayed": 23,
+      "wins": 5,
       "losses": 17,
       "otLosses": 1,
       "seasonId": 20262027,
