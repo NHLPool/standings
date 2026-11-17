@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-16T20:23:50.323227+00:00",
+  "updatedAt": "2026-11-17T03:47:03.699477+00:00",
   "source": "https://api-web.nhle.com/v1/standings/now",
   "teams": [
     {
@@ -69,17 +69,6 @@
       "logo": "https://assets.nhle.com/logos/nhl/svg/TBL_light.svg"
     },
     {
-      "abbrev": "MTL",
-      "name": "Montr\u00e9al Canadiens",
-      "points": 28,
-      "gamesPlayed": 20,
-      "wins": 12,
-      "losses": 4,
-      "otLosses": 4,
-      "seasonId": 20262027,
-      "logo": "https://assets.nhle.com/logos/nhl/svg/MTL_light.svg"
-    },
-    {
       "abbrev": "OTT",
       "name": "Ottawa Senators",
       "points": 28,
@@ -89,6 +78,17 @@
       "otLosses": 2,
       "seasonId": 20262027,
       "logo": "https://assets.nhle.com/logos/nhl/svg/OTT_light.svg"
+    },
+    {
+      "abbrev": "MTL",
+      "name": "Montr\u00e9al Canadiens",
+      "points": 28,
+      "gamesPlayed": 21,
+      "wins": 12,
+      "losses": 5,
+      "otLosses": 4,
+      "seasonId": 20262027,
+      "logo": "https://assets.nhle.com/logos/nhl/svg/MTL_light.svg"
     },
     {
       "abbrev": "BOS",
@@ -124,6 +124,17 @@
       "logo": "https://assets.nhle.com/logos/nhl/svg/NSH_light.svg"
     },
     {
+      "abbrev": "NYR",
+      "name": "New York Rangers",
+      "points": 27,
+      "gamesPlayed": 22,
+      "wins": 13,
+      "losses": 8,
+      "otLosses": 1,
+      "seasonId": 20262027,
+      "logo": "https://assets.nhle.com/logos/nhl/svg/NYR_light.svg"
+    },
+    {
       "abbrev": "FLA",
       "name": "Florida Panthers",
       "points": 27,
@@ -144,17 +155,6 @@
       "otLosses": 2,
       "seasonId": 20262027,
       "logo": "https://assets.nhle.com/logos/nhl/svg/DAL_light.svg"
-    },
-    {
-      "abbrev": "NYR",
-      "name": "New York Rangers",
-      "points": 25,
-      "gamesPlayed": 21,
-      "wins": 12,
-      "losses": 8,
-      "otLosses": 1,
-      "seasonId": 20262027,
-      "logo": "https://assets.nhle.com/logos/nhl/svg/NYR_light.svg"
     },
     {
       "abbrev": "ANA",
