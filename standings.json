@@ -1,7 +1,18 @@
 {
-  "updatedAt": "2026-11-20T03:06:53.186635+00:00",
+  "updatedAt": "2026-11-20T11:29:22.753326+00:00",
   "source": "https://api-web.nhle.com/v1/standings/now",
   "teams": [
+    {
+      "abbrev": "MIN",
+      "name": "Minnesota Wild",
+      "points": 38,
+      "gamesPlayed": 24,
+      "wins": 17,
+      "losses": 3,
+      "otLosses": 4,
+      "seasonId": 20262027,
+      "logo": "https://assets.nhle.com/logos/nhl/svg/MIN_light.svg"
+    },
     {
       "abbrev": "EDM",
       "name": "Edmonton Oilers",
@@ -12,17 +23,6 @@
       "otLosses": 3,
       "seasonId": 20262027,
       "logo": "https://assets.nhle.com/logos/nhl/svg/EDM_light.svg"
-    },
-    {
-      "abbrev": "MIN",
-      "name": "Minnesota Wild",
-      "points": 36,
-      "gamesPlayed": 23,
-      "wins": 16,
-      "losses": 3,
-      "otLosses": 4,
-      "seasonId": 20262027,
-      "logo": "https://assets.nhle.com/logos/nhl/svg/MIN_light.svg"
     },
     {
       "abbrev": "CAR",
@@ -69,6 +69,17 @@
       "logo": "https://assets.nhle.com/logos/nhl/svg/OTT_light.svg"
     },
     {
+      "abbrev": "VGK",
+      "name": "Vegas Golden Knights",
+      "points": 31,
+      "gamesPlayed": 24,
+      "wins": 13,
+      "losses": 6,
+      "otLosses": 5,
+      "seasonId": 20262027,
+      "logo": "https://assets.nhle.com/logos/nhl/svg/VGK_light.svg"
+    },
+    {
       "abbrev": "NJD",
       "name": "New Jersey Devils",
       "points": 30,
@@ -80,15 +91,15 @@
       "logo": "https://assets.nhle.com/logos/nhl/svg/NJD_light.svg"
     },
     {
-      "abbrev": "VGK",
-      "name": "Vegas Golden Knights",
+      "abbrev": "DAL",
+      "name": "Dallas Stars",
       "points": 30,
-      "gamesPlayed": 23,
-      "wins": 13,
+      "gamesPlayed": 22,
+      "wins": 14,
       "losses": 6,
-      "otLosses": 4,
+      "otLosses": 2,
       "seasonId": 20262027,
-      "logo": "https://assets.nhle.com/logos/nhl/svg/VGK_light.svg"
+      "logo": "https://assets.nhle.com/logos/nhl/svg/DAL_light.svg"
     },
     {
       "abbrev": "BOS",
@@ -102,15 +113,15 @@
       "logo": "https://assets.nhle.com/logos/nhl/svg/BOS_light.svg"
     },
     {
-      "abbrev": "DAL",
-      "name": "Dallas Stars",
-      "points": 28,
-      "gamesPlayed": 21,
+      "abbrev": "COL",
+      "name": "Colorado Avalanche",
+      "points": 29,
+      "gamesPlayed": 23,
       "wins": 13,
-      "losses": 6,
-      "otLosses": 2,
+      "losses": 7,
+      "otLosses": 3,
       "seasonId": 20262027,
-      "logo": "https://assets.nhle.com/logos/nhl/svg/DAL_light.svg"
+      "logo": "https://assets.nhle.com/logos/nhl/svg/COL_light.svg"
     },
     {
       "abbrev": "NYR",
@@ -122,17 +133,6 @@
       "otLosses": 1,
       "seasonId": 20262027,
       "logo": "https://assets.nhle.com/logos/nhl/svg/NYR_light.svg"
-    },
-    {
-      "abbrev": "COL",
-      "name": "Colorado Avalanche",
-      "points": 27,
-      "gamesPlayed": 22,
-      "wins": 12,
-      "losses": 7,
-      "otLosses": 3,
-      "seasonId": 20262027,
-      "logo": "https://assets.nhle.com/logos/nhl/svg/COL_light.svg"
     },
     {
       "abbrev": "NSH",
@@ -204,9 +204,9 @@
       "abbrev": "ANA",
       "name": "Anaheim Ducks",
       "points": 23,
-      "gamesPlayed": 22,
+      "gamesPlayed": 23,
       "wins": 11,
-      "losses": 10,
+      "losses": 11,
       "otLosses": 1,
       "seasonId": 20262027,
       "logo": "https://assets.nhle.com/logos/nhl/svg/ANA_light.svg"
@@ -245,12 +245,23 @@
       "logo": "https://assets.nhle.com/logos/nhl/svg/PHI_light.svg"
     },
     {
+      "abbrev": "SEA",
+      "name": "Seattle Kraken",
+      "points": 21,
+      "gamesPlayed": 19,
+      "wins": 10,
+      "losses": 8,
+      "otLosses": 1,
+      "seasonId": 20262027,
+      "logo": "https://assets.nhle.com/logos/nhl/svg/SEA_light.svg"
+    },
+    {
       "abbrev": "CGY",
       "name": "Calgary Flames",
       "points": 21,
-      "gamesPlayed": 22,
+      "gamesPlayed": 23,
       "wins": 10,
-      "losses": 11,
+      "losses": 12,
       "otLosses": 1,
       "seasonId": 20262027,
       "logo": "https://assets.nhle.com/logos/nhl/svg/CGY_light.svg"
@@ -265,17 +276,6 @@
       "otLosses": 0,
       "seasonId": 20262027,
       "logo": "https://assets.nhle.com/logos/nhl/svg/WSH_secondary_light.svg"
-    },
-    {
-      "abbrev": "SEA",
-      "name": "Seattle Kraken",
-      "points": 19,
-      "gamesPlayed": 18,
-      "wins": 9,
-      "losses": 8,
-      "otLosses": 1,
-      "seasonId": 20262027,
-      "logo": "https://assets.nhle.com/logos/nhl/svg/SEA_light.svg"
     },
     {
       "abbrev": "DET",
@@ -311,6 +311,17 @@
       "logo": "https://assets.nhle.com/logos/nhl/svg/LAK_light.svg"
     },
     {
+      "abbrev": "CBJ",
+      "name": "Columbus Blue Jackets",
+      "points": 16,
+      "gamesPlayed": 20,
+      "wins": 8,
+      "losses": 12,
+      "otLosses": 0,
+      "seasonId": 20262027,
+      "logo": "https://assets.nhle.com/logos/nhl/svg/CBJ_light.svg"
+    },
+    {
       "abbrev": "PIT",
       "name": "Pittsburgh Penguins",
       "points": 16,
@@ -322,23 +333,12 @@
       "logo": "https://assets.nhle.com/logos/nhl/svg/PIT_light.svg"
     },
     {
-      "abbrev": "CBJ",
-      "name": "Columbus Blue Jackets",
-      "points": 14,
-      "gamesPlayed": 19,
-      "wins": 7,
-      "losses": 12,
-      "otLosses": 0,
-      "seasonId": 20262027,
-      "logo": "https://assets.nhle.com/logos/nhl/svg/CBJ_light.svg"
-    },
-    {
       "abbrev": "CHI",
       "name": "Chicago Blackhawks",
       "points": 14,
-      "gamesPlayed": 21,
+      "gamesPlayed": 22,
       "wins": 6,
-      "losses": 13,
+      "losses": 14,
       "otLosses": 2,
       "seasonId": 20262027,
       "logo": "https://assets.nhle.com/logos/nhl/svg/CHI_light.svg"
@@ -347,9 +347,9 @@
       "abbrev": "VAN",
       "name": "Vancouver Canucks",
       "points": 11,
-      "gamesPlayed": 23,
+      "gamesPlayed": 24,
       "wins": 5,
-      "losses": 17,
+      "losses": 18,
       "otLosses": 1,
       "seasonId": 20262027,
       "logo": "https://assets.nhle.com/logos/nhl/svg/VAN_light.svg"
