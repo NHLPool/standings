@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-21T17:26:09.749173+00:00",
+  "updatedAt": "2026-11-21T23:09:15.551042+00:00",
   "source": "https://api-web.nhle.com/v1/standings/now",
   "teams": [
     {
@@ -14,26 +14,26 @@
       "logo": "https://assets.nhle.com/logos/nhl/svg/MIN_light.svg"
     },
     {
-      "abbrev": "EDM",
-      "name": "Edmonton Oilers",
-      "points": 37,
-      "gamesPlayed": 24,
-      "wins": 17,
-      "losses": 4,
-      "otLosses": 3,
-      "seasonId": 20262027,
-      "logo": "https://assets.nhle.com/logos/nhl/svg/EDM_light.svg"
-    },
-    {
       "abbrev": "CAR",
       "name": "Carolina Hurricanes",
-      "points": 35,
-      "gamesPlayed": 22,
-      "wins": 16,
+      "points": 37,
+      "gamesPlayed": 23,
+      "wins": 17,
       "losses": 3,
       "otLosses": 3,
       "seasonId": 20262027,
       "logo": "https://assets.nhle.com/logos/nhl/svg/CAR_light.svg"
+    },
+    {
+      "abbrev": "EDM",
+      "name": "Edmonton Oilers",
+      "points": 37,
+      "gamesPlayed": 25,
+      "wins": 17,
+      "losses": 5,
+      "otLosses": 3,
+      "seasonId": 20262027,
+      "logo": "https://assets.nhle.com/logos/nhl/svg/EDM_light.svg"
     },
     {
       "abbrev": "TBL",
