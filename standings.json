@@ -1,7 +1,18 @@
 {
-  "updatedAt": "2026-11-23T21:15:53.357765+00:00",
+  "updatedAt": "2026-11-24T05:58:00.136819+00:00",
   "source": "https://api-web.nhle.com/v1/standings/now",
   "teams": [
+    {
+      "abbrev": "MIN",
+      "name": "Minnesota Wild",
+      "points": 41,
+      "gamesPlayed": 26,
+      "wins": 18,
+      "losses": 3,
+      "otLosses": 5,
+      "seasonId": 20262027,
+      "logo": "https://assets.nhle.com/logos/nhl/svg/MIN_light.svg"
+    },
     {
       "abbrev": "CAR",
       "name": "Carolina Hurricanes",
@@ -12,17 +23,6 @@
       "otLosses": 3,
       "seasonId": 20262027,
       "logo": "https://assets.nhle.com/logos/nhl/svg/CAR_light.svg"
-    },
-    {
-      "abbrev": "MIN",
-      "name": "Minnesota Wild",
-      "points": 39,
-      "gamesPlayed": 25,
-      "wins": 17,
-      "losses": 3,
-      "otLosses": 5,
-      "seasonId": 20262027,
-      "logo": "https://assets.nhle.com/logos/nhl/svg/MIN_light.svg"
     },
     {
       "abbrev": "EDM",
@@ -38,9 +38,9 @@
     {
       "abbrev": "OTT",
       "name": "Ottawa Senators",
-      "points": 33,
-      "gamesPlayed": 24,
-      "wins": 15,
+      "points": 35,
+      "gamesPlayed": 25,
+      "wins": 16,
       "losses": 6,
       "otLosses": 3,
       "seasonId": 20262027,
@@ -80,12 +80,23 @@
       "logo": "https://assets.nhle.com/logos/nhl/svg/DAL_light.svg"
     },
     {
+      "abbrev": "NJD",
+      "name": "New Jersey Devils",
+      "points": 32,
+      "gamesPlayed": 24,
+      "wins": 16,
+      "losses": 8,
+      "otLosses": 0,
+      "seasonId": 20262027,
+      "logo": "https://assets.nhle.com/logos/nhl/svg/NJD_light.svg"
+    },
+    {
       "abbrev": "MTL",
       "name": "Montr\u00e9al Canadiens",
       "points": 32,
-      "gamesPlayed": 24,
+      "gamesPlayed": 25,
       "wins": 14,
-      "losses": 6,
+      "losses": 7,
       "otLosses": 4,
       "seasonId": 20262027,
       "logo": "https://assets.nhle.com/logos/nhl/svg/MTL_light.svg"
@@ -100,17 +111,6 @@
       "otLosses": 1,
       "seasonId": 20262027,
       "logo": "https://assets.nhle.com/logos/nhl/svg/BOS_light.svg"
-    },
-    {
-      "abbrev": "NJD",
-      "name": "New Jersey Devils",
-      "points": 30,
-      "gamesPlayed": 23,
-      "wins": 15,
-      "losses": 8,
-      "otLosses": 0,
-      "seasonId": 20262027,
-      "logo": "https://assets.nhle.com/logos/nhl/svg/NJD_light.svg"
     },
     {
       "abbrev": "COL",
@@ -157,15 +157,15 @@
       "logo": "https://assets.nhle.com/logos/nhl/svg/STL_light.svg"
     },
     {
-      "abbrev": "NYI",
-      "name": "New York Islanders",
-      "points": 27,
-      "gamesPlayed": 22,
-      "wins": 11,
-      "losses": 6,
-      "otLosses": 5,
+      "abbrev": "WPG",
+      "name": "Winnipeg Jets",
+      "points": 28,
+      "gamesPlayed": 25,
+      "wins": 12,
+      "losses": 9,
+      "otLosses": 4,
       "seasonId": 20262027,
-      "logo": "https://assets.nhle.com/logos/nhl/svg/NYI_light.svg"
+      "logo": "https://assets.nhle.com/logos/nhl/svg/WPG_light.svg"
     },
     {
       "abbrev": "NYR",
@@ -179,26 +179,26 @@
       "logo": "https://assets.nhle.com/logos/nhl/svg/NYR_light.svg"
     },
     {
+      "abbrev": "NYI",
+      "name": "New York Islanders",
+      "points": 27,
+      "gamesPlayed": 23,
+      "wins": 11,
+      "losses": 7,
+      "otLosses": 5,
+      "seasonId": 20262027,
+      "logo": "https://assets.nhle.com/logos/nhl/svg/NYI_light.svg"
+    },
+    {
       "abbrev": "UTA",
       "name": "Utah Mammoth",
       "points": 27,
-      "gamesPlayed": 24,
+      "gamesPlayed": 25,
       "wins": 12,
-      "losses": 9,
+      "losses": 10,
       "otLosses": 3,
       "seasonId": 20262027,
       "logo": "https://assets.nhle.com/logos/nhl/svg/UTA_light.svg"
-    },
-    {
-      "abbrev": "WPG",
-      "name": "Winnipeg Jets",
-      "points": 26,
-      "gamesPlayed": 24,
-      "wins": 11,
-      "losses": 9,
-      "otLosses": 4,
-      "seasonId": 20262027,
-      "logo": "https://assets.nhle.com/logos/nhl/svg/WPG_light.svg"
     },
     {
       "abbrev": "BUF",
@@ -212,17 +212,6 @@
       "logo": "https://assets.nhle.com/logos/nhl/svg/BUF_light.svg"
     },
     {
-      "abbrev": "SJS",
-      "name": "San Jose Sharks",
-      "points": 24,
-      "gamesPlayed": 25,
-      "wins": 11,
-      "losses": 12,
-      "otLosses": 2,
-      "seasonId": 20262027,
-      "logo": "https://assets.nhle.com/logos/nhl/svg/SJS_light.svg"
-    },
-    {
       "abbrev": "PHI",
       "name": "Philadelphia Flyers",
       "points": 24,
@@ -234,12 +223,34 @@
       "logo": "https://assets.nhle.com/logos/nhl/svg/PHI_light.svg"
     },
     {
+      "abbrev": "SJS",
+      "name": "San Jose Sharks",
+      "points": 24,
+      "gamesPlayed": 26,
+      "wins": 11,
+      "losses": 13,
+      "otLosses": 2,
+      "seasonId": 20262027,
+      "logo": "https://assets.nhle.com/logos/nhl/svg/SJS_light.svg"
+    },
+    {
+      "abbrev": "SEA",
+      "name": "Seattle Kraken",
+      "points": 23,
+      "gamesPlayed": 21,
+      "wins": 11,
+      "losses": 9,
+      "otLosses": 1,
+      "seasonId": 20262027,
+      "logo": "https://assets.nhle.com/logos/nhl/svg/SEA_light.svg"
+    },
+    {
       "abbrev": "ANA",
       "name": "Anaheim Ducks",
       "points": 23,
-      "gamesPlayed": 24,
+      "gamesPlayed": 25,
       "wins": 11,
-      "losses": 12,
+      "losses": 13,
       "otLosses": 1,
       "seasonId": 20262027,
       "logo": "https://assets.nhle.com/logos/nhl/svg/ANA_light.svg"
@@ -248,23 +259,23 @@
       "abbrev": "CGY",
       "name": "Calgary Flames",
       "points": 22,
-      "gamesPlayed": 24,
+      "gamesPlayed": 25,
       "wins": 10,
-      "losses": 12,
+      "losses": 13,
       "otLosses": 2,
       "seasonId": 20262027,
       "logo": "https://assets.nhle.com/logos/nhl/svg/CGY_light.svg"
     },
     {
-      "abbrev": "SEA",
-      "name": "Seattle Kraken",
+      "abbrev": "TOR",
+      "name": "Toronto Maple Leafs",
       "points": 21,
-      "gamesPlayed": 20,
-      "wins": 10,
-      "losses": 9,
-      "otLosses": 1,
+      "gamesPlayed": 26,
+      "wins": 9,
+      "losses": 14,
+      "otLosses": 3,
       "seasonId": 20262027,
-      "logo": "https://assets.nhle.com/logos/nhl/svg/SEA_light.svg"
+      "logo": "https://assets.nhle.com/logos/nhl/svg/TOR_light.svg"
     },
     {
       "abbrev": "WSH",
@@ -289,23 +300,23 @@
       "logo": "https://assets.nhle.com/logos/nhl/svg/DET_light.svg"
     },
     {
-      "abbrev": "TOR",
-      "name": "Toronto Maple Leafs",
-      "points": 19,
-      "gamesPlayed": 25,
+      "abbrev": "LAK",
+      "name": "Los Angeles Kings",
+      "points": 18,
+      "gamesPlayed": 22,
       "wins": 8,
-      "losses": 14,
-      "otLosses": 3,
+      "losses": 12,
+      "otLosses": 2,
       "seasonId": 20262027,
-      "logo": "https://assets.nhle.com/logos/nhl/svg/TOR_light.svg"
+      "logo": "https://assets.nhle.com/logos/nhl/svg/LAK_light.svg"
     },
     {
       "abbrev": "CBJ",
       "name": "Columbus Blue Jackets",
       "points": 18,
-      "gamesPlayed": 21,
+      "gamesPlayed": 22,
       "wins": 9,
-      "losses": 12,
+      "losses": 13,
       "otLosses": 0,
       "seasonId": 20262027,
       "logo": "https://assets.nhle.com/logos/nhl/svg/CBJ_light.svg"
@@ -320,17 +331,6 @@
       "otLosses": 2,
       "seasonId": 20262027,
       "logo": "https://assets.nhle.com/logos/nhl/svg/CHI_light.svg"
-    },
-    {
-      "abbrev": "LAK",
-      "name": "Los Angeles Kings",
-      "points": 16,
-      "gamesPlayed": 21,
-      "wins": 7,
-      "losses": 12,
-      "otLosses": 2,
-      "seasonId": 20262027,
-      "logo": "https://assets.nhle.com/logos/nhl/svg/LAK_light.svg"
     },
     {
       "abbrev": "PIT",
