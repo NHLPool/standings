@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-25T02:21:21.390517+00:00",
+  "updatedAt": "2026-11-25T12:44:02.745315+00:00",
   "source": "https://api-web.nhle.com/v1/standings/now",
   "teams": [
     {
@@ -28,9 +28,9 @@
       "abbrev": "EDM",
       "name": "Edmonton Oilers",
       "points": 38,
-      "gamesPlayed": 26,
+      "gamesPlayed": 27,
       "wins": 17,
-      "losses": 5,
+      "losses": 6,
       "otLosses": 4,
       "seasonId": 20262027,
       "logo": "https://assets.nhle.com/logos/nhl/svg/EDM_light.svg"
@@ -49,9 +49,9 @@
     {
       "abbrev": "VGK",
       "name": "Vegas Golden Knights",
-      "points": 33,
-      "gamesPlayed": 25,
-      "wins": 14,
+      "points": 35,
+      "gamesPlayed": 26,
+      "wins": 15,
       "losses": 6,
       "otLosses": 5,
       "seasonId": 20262027,
