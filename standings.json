@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-26T04:58:42.098860+00:00",
+  "updatedAt": "2026-11-26T15:06:41.220961+00:00",
   "source": "https://api-web.nhle.com/v1/standings/now",
   "teams": [
     {
@@ -94,12 +94,23 @@
       "abbrev": "MTL",
       "name": "Montr\u00e9al Canadiens",
       "points": 32,
-      "gamesPlayed": 25,
+      "gamesPlayed": 26,
       "wins": 14,
-      "losses": 7,
+      "losses": 8,
       "otLosses": 4,
       "seasonId": 20262027,
       "logo": "https://assets.nhle.com/logos/nhl/svg/MTL_light.svg"
+    },
+    {
+      "abbrev": "COL",
+      "name": "Colorado Avalanche",
+      "points": 31,
+      "gamesPlayed": 24,
+      "wins": 14,
+      "losses": 7,
+      "otLosses": 3,
+      "seasonId": 20262027,
+      "logo": "https://assets.nhle.com/logos/nhl/svg/COL_light.svg"
     },
     {
       "abbrev": "BOS",
@@ -144,17 +155,6 @@
       "otLosses": 4,
       "seasonId": 20262027,
       "logo": "https://assets.nhle.com/logos/nhl/svg/WPG_light.svg"
-    },
-    {
-      "abbrev": "COL",
-      "name": "Colorado Avalanche",
-      "points": 29,
-      "gamesPlayed": 23,
-      "wins": 13,
-      "losses": 7,
-      "otLosses": 3,
-      "seasonId": 20262027,
-      "logo": "https://assets.nhle.com/logos/nhl/svg/COL_light.svg"
     },
     {
       "abbrev": "NYI",
@@ -212,6 +212,17 @@
       "logo": "https://assets.nhle.com/logos/nhl/svg/BUF_light.svg"
     },
     {
+      "abbrev": "ANA",
+      "name": "Anaheim Ducks",
+      "points": 25,
+      "gamesPlayed": 26,
+      "wins": 12,
+      "losses": 13,
+      "otLosses": 1,
+      "seasonId": 20262027,
+      "logo": "https://assets.nhle.com/logos/nhl/svg/ANA_light.svg"
+    },
+    {
       "abbrev": "CGY",
       "name": "Calgary Flames",
       "points": 24,
@@ -221,17 +232,6 @@
       "otLosses": 2,
       "seasonId": 20262027,
       "logo": "https://assets.nhle.com/logos/nhl/svg/CGY_light.svg"
-    },
-    {
-      "abbrev": "SJS",
-      "name": "San Jose Sharks",
-      "points": 24,
-      "gamesPlayed": 26,
-      "wins": 11,
-      "losses": 13,
-      "otLosses": 2,
-      "seasonId": 20262027,
-      "logo": "https://assets.nhle.com/logos/nhl/svg/SJS_light.svg"
     },
     {
       "abbrev": "PHI",
@@ -245,26 +245,26 @@
       "logo": "https://assets.nhle.com/logos/nhl/svg/PHI_light.svg"
     },
     {
+      "abbrev": "SJS",
+      "name": "San Jose Sharks",
+      "points": 24,
+      "gamesPlayed": 27,
+      "wins": 11,
+      "losses": 14,
+      "otLosses": 2,
+      "seasonId": 20262027,
+      "logo": "https://assets.nhle.com/logos/nhl/svg/SJS_light.svg"
+    },
+    {
       "abbrev": "SEA",
       "name": "Seattle Kraken",
       "points": 23,
-      "gamesPlayed": 21,
+      "gamesPlayed": 22,
       "wins": 11,
-      "losses": 9,
+      "losses": 10,
       "otLosses": 1,
       "seasonId": 20262027,
       "logo": "https://assets.nhle.com/logos/nhl/svg/SEA_light.svg"
-    },
-    {
-      "abbrev": "ANA",
-      "name": "Anaheim Ducks",
-      "points": 23,
-      "gamesPlayed": 25,
-      "wins": 11,
-      "losses": 13,
-      "otLosses": 1,
-      "seasonId": 20262027,
-      "logo": "https://assets.nhle.com/logos/nhl/svg/ANA_light.svg"
     },
     {
       "abbrev": "WSH",
@@ -300,6 +300,17 @@
       "logo": "https://assets.nhle.com/logos/nhl/svg/TOR_light.svg"
     },
     {
+      "abbrev": "CHI",
+      "name": "Chicago Blackhawks",
+      "points": 20,
+      "gamesPlayed": 25,
+      "wins": 9,
+      "losses": 14,
+      "otLosses": 2,
+      "seasonId": 20262027,
+      "logo": "https://assets.nhle.com/logos/nhl/svg/CHI_light.svg"
+    },
+    {
       "abbrev": "CBJ",
       "name": "Columbus Blue Jackets",
       "points": 19,
@@ -320,17 +331,6 @@
       "otLosses": 2,
       "seasonId": 20262027,
       "logo": "https://assets.nhle.com/logos/nhl/svg/LAK_light.svg"
-    },
-    {
-      "abbrev": "CHI",
-      "name": "Chicago Blackhawks",
-      "points": 18,
-      "gamesPlayed": 24,
-      "wins": 8,
-      "losses": 14,
-      "otLosses": 2,
-      "seasonId": 20262027,
-      "logo": "https://assets.nhle.com/logos/nhl/svg/CHI_light.svg"
     },
     {
       "abbrev": "PIT",
